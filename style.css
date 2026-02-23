@@ -49,6 +49,7 @@ body {
 }
 
 /* Seal */
+/* Κίνηση για τη σφραγίδα */
 .seal {
   position: absolute;
   top: 50%;
@@ -65,9 +66,19 @@ body {
   font-size: 32px;
   color: #7a756f;
   cursor: pointer;
-  transition: opacity 1s ease;
+  transition: opacity 0.4s ease, transform 0.2s ease;
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
   z-index: 20;
+}
+
+/* Στις μικροκινήσεις κατά hover */
+.seal:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Εφέ όταν το πατάς */
+.seal:active {
+  transform: translate(-50%, -50%) scale(0.9);
 }
 
 /* OPEN ANIMATION */
