@@ -101,13 +101,17 @@ body {
 }
 
 .invitation {
-  min-height: 100vh;
-  padding: 120px 20px;
+  position: absolute;           /* για να το κεντράρει πάνω στην οθόνη */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;                   /* θα εμφανιστεί με JS animation */
+  transition: opacity 1s ease, transform 1s ease;
+  max-width: 90%;               /* αντί για 600px, να καλύπτει σχεδόν όλη την οθόνη */
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 600px;
-  margin: auto;
 }
 
 .intro {
@@ -123,14 +127,15 @@ body {
 .script {
   display: block;
   font-family: 'Allura', cursive;
-  font-size: 4.5rem;
+  font-size: 8vw;              /* responsive, μεγαλώνει ανάλογα με το πλάτος της οθόνης */
   font-weight: 400;
+  margin: 0;
 }
 
 .and {
   font-family: 'Allura', cursive;
-  font-size: 3rem;
-  font-weight: 300; /* πιο λεπτό */
+  font-size: 5vw;              /* λίγο μικρότερο από τα ονόματα, responsive */
+  font-weight: 300;
   display: block;
   margin: 20px 0;
   color: #7a756f;
