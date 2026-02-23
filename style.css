@@ -1,10 +1,36 @@
+/* ============================= */
+/* GLOBAL STYLES */
+/* ============================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background: #f4efe9;
-  overflow: hidden;
+  font-family: 'Cormorant Garamond', serif;
+  color: #7a756f;
+  text-align: center;
+  overflow-x: hidden;
 }
 
-/* Envelope container */
+section {
+  padding: 120px 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+
+/* ============================= */
+/* ENVELOPE */
+/* ============================= */
+
 .envelope {
   position: fixed;
   inset: 0;
@@ -17,7 +43,7 @@ body {
   width: 100%;
   height: 100%;
   background: white;
-  transition: transform 6s ease;
+  transition: transform 1.8s ease;
 }
 
 /* TRIANGLE BORDERS */
@@ -26,12 +52,12 @@ body {
   width: 100%;
   height: 100%;
   background: transparent;
-  transition: transform 6s ease;
   border: 3px solid #b8afa5;
   box-sizing: border-box;
+  transition: transform 1.8s ease;
 }
 
-/* Clip-paths για κάθε τρίγωνο */
+/* Triangle shapes */
 .top-bg, .top-border {
   clip-path: polygon(0 0, 100% 0, 50% 50%);
 }
@@ -48,8 +74,28 @@ body {
   clip-path: polygon(100% 0, 100% 100%, 50% 50%);
 }
 
-/* Seal */
-/* Κίνηση για τη σφραγίδα */
+/* OPEN animation */
+.open .top-bg,
+.open .top-border {
+  transform: translateY(-100%);
+}
+.open .bottom-bg,
+.open .bottom-border {
+  transform: translateY(100%);
+}
+.open .left-bg,
+.open .left-border {
+  transform: translateX(-100%);
+}
+.open .right-bg,
+.open .right-border {
+  transform: translateX(100%);
+}
+
+/* ============================= */
+/* SEAL */
+/* ============================= */
+
 .seal {
   position: absolute;
   top: 50%;
@@ -67,64 +113,41 @@ body {
   color: #7a756f;
   cursor: pointer;
   transition: opacity 0.4s ease, transform 0.2s ease;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   z-index: 20;
 }
 
-/* Στις μικροκινήσεις κατά hover */
 .seal:hover {
   transform: translate(-50%, -50%) scale(1.05);
 }
 
-/* Εφέ όταν το πατάς */
 .seal:active {
-  transform: translate(-50%, -50%) scale(0.9);
+  transform: translate(-50%, -50%) scale(0.92);
 }
 
-/* OPEN ANIMATION */
-.open .top-bg,
-.open .top-border {
-  transform: translateY(-100%);
-}
-.open .bottom-bg,
-.open .bottom-border {
-  transform: translateY(100%);
-}
-.open .left-bg,
-.open .left-border {
-  transform: translateX(-100%);
-}
-.open .right-bg,
-.open .right-border {
-  transform: translateX(100%);
-}
 .open .seal {
   opacity: 0;
   pointer-events: none;
 }
 
-body {
-  margin: 0;
-  background: #f4efe9; /* sandy ivory */
-  font-family: 'Cormorant Garamond', serif;
-  color: #7a756f;
-  text-align: center;
-}
+
+/* ============================= */
+/* INVITATION */
+/* ============================= */
 
 .invitation {
   min-height: 100vh;
-  padding: 120px 20px;
+  max-width: 600px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 600px;
-  margin: auto;
+  opacity: 0;
+  transition: opacity 1.5s ease;
 }
 
-.intro {
-  font-size: 1rem;
-  letter-spacing: 2px;
-  margin-bottom: 40px;
+.invitation.show {
+  opacity: 1;
 }
 
 .names {
@@ -134,17 +157,15 @@ body {
 .script {
   display: block;
   font-family: 'Allura', cursive;
-  font-size: 4.5rem;
+  font-size: 4.8rem;
   font-weight: 400;
 }
 
 .and {
   font-family: 'Allura', cursive;
-  font-size: 3rem;
-  font-weight: 300; /* πιο λεπτό */
-  display: block;
+  font-size: 2.8rem;
   margin: 20px 0;
-  color: #7a756f;
+  font-weight: 300;
 }
 
 .invite-text {
@@ -162,27 +183,177 @@ body {
   margin: 8px 0;
 }
 
-.reception {
-  margin-top: 40px;
-  font-style: italic;
+/* ============================= */
+/* GAMES */
+/* ============================= */
+
+#memory-game-container .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 100px); /* 4 στήλες */
+  grid-gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
-/* Για μικρές οθόνες (κινητά) */
-@media screen and (max-width: 600px) {
-  .invitation {
-    max-width: 95%;           /* σχεδόν όλη η οθόνη */
-    padding: 0 10px;
+#memory-game-container .card {
+  width: 100px;
+  height: 100px;
+  perspective: 600px; /* απαραίτητο για flip */
+  cursor: pointer;
+}
+
+#memory-game-container .card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+#memory-game-container .card.flip .card-inner {
+  transform: rotateY(180deg);
+}
+
+#memory-game-container .card-front,
+#memory-game-container .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#memory-game-container .card-front {
+  background: #aee1f9;
+  transform: rotateY(180deg);
+}
+
+#memory-game-container .card-back {
+  background: #fff;
+}
+
+/* ============================= */
+/* COUNTDOWN */
+/* ============================= */
+
+.countdown-section {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  margin: 50px 0;
+  color: #7a756f; /* ίδιο χρώμα με τα υπόλοιπα */
+}
+
+.countdown-section h2 {
+  font-size: 2rem; /* μικρότερο */
+  margin-bottom: 30px;
+  color: #7a756f; /* ίδιο χρώμα */
+}
+
+#countdown {
+  font-size: 1.5rem; /* μικρότερο */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: baseline;
+}
+
+#countdown .number {
+  font-size: 2rem; /* πιο μικρά */
+  font-weight: 700;
+  color: #7a756f; /* ίδιο χρώμα */
+  transition: transform 0.3s ease;
+}
+
+#countdown .number.animate {
+  transform: scale(1.2); /* μικρότερο pop */
+}
+
+#countdown .unit {
+  font-size: 1rem; /* μικρότερο */
+  color: #7a756f; /* ίδιο χρώμα */
+  margin-right: 10px;
+}
+
+
+/* ============================= */
+/* RSVP */
+/* ============================= */
+
+.rsvp-section {
+  background: #f9f6f2;
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  background: white;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+button {
+  padding: 12px 30px;
+  border: none;
+  background: #c5a880;
+  color: white;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #b49a73;
+}
+
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media screen and (max-width: 768px) {
+
+  section {
+    padding: 80px 20px;
   }
 
   .script {
-    font-size: 12vw;          /* πολύ μεγαλύτερα γράμματα σε κινητό */
+    font-size: 12vw;
   }
 
   .and {
-    font-size: 8vw;           /* μεγαλύτερο & */
+    font-size: 8vw;
   }
 
-  .details, .invite-text, .reception {
-    font-size: 4vw;           /* λίγο μεγαλύτερα τα υπόλοιπα κείμενα */
+  .invite-text,
+  .details {
+    font-size: 4vw;
   }
+
+  #countdown {
+    font-size: 4vw;
+  }
+
 }

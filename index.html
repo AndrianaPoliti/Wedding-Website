@@ -3,30 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Andriana & Iasonas</title>
+
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <!-- ENVELOPE OVERLAY -->
 <div class="envelope" id="envelope">
-  <!-- Top triangle -->
   <div class="triangle top-bg"></div>
   <div class="triangle top-border"></div>
-
-  <!-- Bottom triangle -->
   <div class="triangle bottom-bg"></div>
   <div class="triangle bottom-border"></div>
-
-  <!-- Left triangle -->
   <div class="triangle left-bg"></div>
   <div class="triangle left-border"></div>
-
-  <!-- Right triangle -->
   <div class="triangle right-bg"></div>
   <div class="triangle right-border"></div>
-
-  <!-- Seal -->
   <div class="seal" id="seal">A | I</div>
 </div>
 
@@ -51,12 +46,214 @@
   </div>
 </section>
 
+<audio id="bg-music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- COUNTDOWN -->
+<section class="countdown-section">
+  <h2>Counting the days</h2>
+  <div id="countdown"></div>
+</section>
+
+
+<!-- Memory Game -->
+<div id="memory-game-container">
+  <h1>Island Memory Game 🐚⛵</h1>
+  <div class="grid" id="grid"></div>
+  <div class="score" id="memoryScore">Βρήκες 0 από 8 ζευγάρια!</div>
+</div>
+
+<script>
+const icons = ['🐚','⛵','🌴','🌅','🏖️','🏠','🍹','🐠'];
+let cardValues = [...icons, ...icons];
+let firstCard = null;
+let secondCard = null;
+let lockBoard = false;
+let matchedPairs = 0;
+
+const grid = document.getElementById('grid');
+const memoryScore = document.getElementById('memoryScore');
+
+cardValues.sort(() => 0.5 - Math.random());
+
+cardValues.forEach(icon => {
+  const card = document.createElement('div');
+  card.classList.add('card');
+  card.innerHTML = `
+    <div class="card-inner">
+      <div class="card-front">${icon}</div>
+      <div class="card-back"></div>
+    </div>`;
+  grid.appendChild(card);
+
+  card.addEventListener('click', () => {
+    if(lockBoard || card.classList.contains('flip') || card.classList.contains('matched')) return;
+
+    card.classList.add('flip');
+
+    if(!firstCard){
+      firstCard = card;
+    } else {
+      secondCard = card;
+      lockBoard = true;
+
+      const firstIcon = firstCard.querySelector('.card-front').textContent;
+      const secondIcon = secondCard.querySelector('.card-front').textContent;
+
+      if(firstIcon === secondIcon){
+        firstCard.classList.add('matched');
+        secondCard.classList.add('matched');
+        matchedPairs++;
+        memoryScore.textContent = `Βρήκες ${matchedPairs} από 8 ζευγάρια!`;
+        resetBoard();
+      } else {
+        setTimeout(()=>{
+          firstCard.classList.remove('flip');
+          secondCard.classList.remove('flip');
+          resetBoard();
+        },1000);
+      }
+    }
+  });
+});
+
+function resetBoard(){
+  [firstCard, secondCard, lockBoard] = [null, null, false];
+}
+</script>
+
+<!-- Tennis Pong Game -->
+<div id="tennis-game-container">
+  <h1>Tennis Pong 🎾</h1>
+  <canvas id="tennisGame" width="400" height="300"></canvas>
+  <div class="score" id="tennisScore">Score: 0</div>
+  <div id="gameOver" style="margin-top:10px; font-size:1.2rem; color:#e91e63; display:none;">Game Over! 🎾</div>
+  <button id="startBtn">Start Game</button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const canvas = document.getElementById('tennisGame');
+  const ctx = canvas.getContext('2d');
+
+  const paddleWidth = 80;
+  const paddleHeight = 10;
+  let paddleX = (canvas.width - paddleWidth)/2;
+
+  const ballRadius = 8;
+  let x = canvas.width/2;
+  let y = canvas.height-30;
+  let dx = 2;
+  let dy = -2;
+
+  let score = 0;
+  let isGameOver = false;
+  let gameStarted = false;
+
+  const scoreEl = document.getElementById('tennisScore');
+  const gameOverEl = document.getElementById('gameOver');
+  const startBtn = document.getElementById('startBtn');
+
+  document.addEventListener("mousemove", e=>{
+    if(!gameStarted) return;
+    const rect = canvas.getBoundingClientRect();
+    const relativeX = e.clientX - rect.left;
+    paddleX = Math.max(0, Math.min(canvas.width - paddleWidth, relativeX - paddleWidth/2));
+  });
+
+  function drawPaddle(){
+    ctx.beginPath();
+    ctx.rect(paddleX, canvas.height - paddleHeight -10, paddleWidth, paddleHeight);
+    ctx.fillStyle="#fff";
+    ctx.fill();
+    ctx.closePath();
+  }
+
+  function drawBall(){
+    ctx.beginPath();
+    ctx.arc(x,y,ballRadius,0,Math.PI*2);
+    ctx.fillStyle="#ffeb3b";
+    ctx.fill();
+    ctx.closePath();
+  }
+
+  function draw(){
+    if(isGameOver || !gameStarted) return;
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    drawBall();
+    drawPaddle();
+
+    if(x + dx > canvas.width - ballRadius || x + dx < ballRadius) dx = -dx;
+    if(y + dy < ballRadius) dy = -dy;
+    else if(y + dy > canvas.height - ballRadius - 10){
+      if(x > paddleX && x < paddleX + paddleWidth){
+        dy = -dy;
+        score++;
+        scoreEl.textContent = `Score: ${score}`;
+      } else {
+        isGameOver = true;
+        gameOverEl.style.display = "block";
+      }
+    }
+
+    x += dx;
+    y += dy;
+
+    if(!isGameOver) requestAnimationFrame(draw);
+  }
+
+  startBtn.addEventListener("click", ()=>{
+    if(!gameStarted){
+      gameStarted = true;
+      isGameOver = false;
+      gameOverEl.style.display="none";
+      x = canvas.width/2;
+      y = canvas.height-30;
+      dx = 2;
+      dy = -2;
+      score = 0;
+      scoreEl.textContent = `Score: ${score}`;
+      draw();
+    }
+  });
+});
+</script>
+
+
+<!-- RSVP -->
+<section class="rsvp-section">
+  <h2>RSVP</h2>
+
+  <form id="rsvp-form">
+    <input type="text" id="name" placeholder="Your Name" required>
+
+    <select id="attendance">
+      <option value="yes">Joyfully attending</option>
+      <option value="no">Regretfully declining</option>
+    </select>
+
+    <input type="number" id="guests" placeholder="Number of guests">
+
+    <textarea id="message" placeholder="Leave a message"></textarea>
+
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+
+<!-- Scripts at the bottom -->
 <script>
 const seal = document.getElementById("seal");
 const envelope = document.getElementById("envelope");
 const invitation = document.getElementById("invitation");
+const music = document.getElementById("bg-music");
 
 seal.addEventListener("click", () => {
+
+  /* Envelope animation */
   seal.style.opacity = "0";
   envelope.classList.add("open");
 
@@ -67,8 +264,27 @@ seal.addEventListener("click", () => {
   setTimeout(() => {
     envelope.style.display = "none";
   }, 1500);
+
+  /* 🎵 Music start */
+  music.volume = 0;
+  music.play();
+
+  let fadeAudio = setInterval(() => {
+    if (music.volume < 0.5) {
+      music.volume += 0.02;
+    } else {
+      clearInterval(fadeAudio);
+    }
+  }, 200);
+
 });
 </script>
+
+<audio id="bg-music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
 
 </body>
 </html>
