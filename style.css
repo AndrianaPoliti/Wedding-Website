@@ -17,7 +17,7 @@ body {
   width: 100%;
   height: 100%;
   background: white;
-  transition: transform 1.2s ease;
+  transition: transform 3s ease;
 }
 
 /* TRIANGLE BORDERS */
@@ -26,7 +26,7 @@ body {
   width: 100%;
   height: 100%;
   background: transparent;
-  transition: transform 1.2s ease;
+  transition: transform 3s ease;
   border: 3px solid #b8afa5;
   box-sizing: border-box;
 }
@@ -65,7 +65,7 @@ body {
   font-size: 32px;
   color: #7a756f;
   cursor: pointer;
-  transition: opacity 0.4s ease;
+  transition: opacity 1.5s ease;
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
   z-index: 20;
 }
