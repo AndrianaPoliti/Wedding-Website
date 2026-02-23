@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Andriana & Iasonas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ENVELOPE OVERLAY -->
+<div class="envelope" id="envelope">
+  <!-- Top triangle -->
+  <div class="triangle top-bg"></div>
+  <div class="triangle top-border"></div>
+
+  <!-- Bottom triangle -->
+  <div class="triangle bottom-bg"></div>
+  <div class="triangle bottom-border"></div>
+
+  <!-- Left triangle -->
+  <div class="triangle left-bg"></div>
+  <div class="triangle left-border"></div>
+
+  <!-- Right triangle -->
+  <div class="triangle right-bg"></div>
+  <div class="triangle right-border"></div>
+
+  <!-- Seal -->
+  <div class="seal" id="seal">A | I</div>
+</div>
+
+
+<!-- INVITATION -->
+<section class="invitation" id="invitation">
+  <h1 class="names">
+    <span class="script">Andriana</span>
+    <span class="and">&amp;</span>
+    <span class="script">Iasonas</span>
+  </h1>
+
+  <p class="invite-text">
+    request the pleasure of your company<br>
+    at their wedding
+  </p>
+
+  <div class="details">
+    <p>JULY 9TH 2026</p>
+    <p>6:00 IN THE AFTERNOON</p>
+    <p>AGIOS KYPRIANOS, ANDROS</p>
+  </div>
+</section>
+
+<script>
+const seal = document.getElementById("seal");
+const envelope = document.getElementById("envelope");
+const invitation = document.getElementById("invitation");
+
+seal.addEventListener("click", () => {
+  seal.style.opacity = "0";
+  envelope.classList.add("open");
+
+  setTimeout(() => {
+    invitation.classList.add("show");
+  }, 900);
+
+  setTimeout(() => {
+    envelope.style.display = "none";
+  }, 1500);
+});
+</script>
+
+</body>
+</html>

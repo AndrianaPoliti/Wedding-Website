@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  background: #f4efe9;
+  overflow: hidden;
+}
+
+/* Envelope container */
+.envelope {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+}
+
+/* TRIANGLE BACKGROUNDS */
+.triangle[class$="-bg"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transition: transform 1.2s ease;
+}
+
+/* TRIANGLE BORDERS */
+.triangle[class$="-border"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transition: transform 1.2s ease;
+  border: 3px solid #b8afa5;
+  box-sizing: border-box;
+}
+
+/* Clip-paths για κάθε τρίγωνο */
+.top-bg, .top-border {
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+}
+
+.bottom-bg, .bottom-border {
+  clip-path: polygon(0 100%, 100% 100%, 50% 50%);
+}
+
+.left-bg, .left-border {
+  clip-path: polygon(0 0, 0 100%, 50% 50%);
+}
+
+.right-bg, .right-border {
+  clip-path: polygon(100% 0, 100% 100%, 50% 50%);
+}
+
+/* Seal */
+.seal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #e6dcd0;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Allura', cursive;
+  font-size: 32px;
+  color: #7a756f;
+  cursor: pointer;
+  transition: opacity 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  z-index: 20;
+}
+
+/* OPEN ANIMATION */
+.open .top-bg,
+.open .top-border {
+  transform: translateY(-100%);
+}
+.open .bottom-bg,
+.open .bottom-border {
+  transform: translateY(100%);
+}
+.open .left-bg,
+.open .left-border {
+  transform: translateX(-100%);
+}
+.open .right-bg,
+.open .right-border {
+  transform: translateX(100%);
+}
+.open .seal {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body {
+  margin: 0;
+  background: #f4efe9; /* sandy ivory */
+  font-family: 'Cormorant Garamond', serif;
+  color: #7a756f;
+  text-align: center;
+}
+
+.invitation {
+  min-height: 100vh;
+  padding: 120px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+  margin: auto;
+}
+
+.intro {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+.names {
+  margin: 0;
+}
+
+.script {
+  display: block;
+  font-family: 'Allura', cursive;
+  font-size: 4.5rem;
+  font-weight: 400;
+}
+
+.and {
+  font-family: 'Allura', cursive;
+  font-size: 3rem;
+  font-weight: 300; /* πιο λεπτό */
+  display: block;
+  margin: 20px 0;
+  color: #7a756f;
+}
+
+.invite-text {
+  margin-top: 40px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.details {
+  margin-top: 40px;
+  letter-spacing: 2px;
+}
+
+.details p {
+  margin: 8px 0;
+}
+
+.reception {
+  margin-top: 40px;
+  font-style: italic;
+}
+
