@@ -161,17 +161,16 @@ body {
 
 
 
-/* μικρές οθόνες (κινητά) */
 @media screen and (max-width: 600px) {
   .script {
-    font-size: 20vw;       /* πραγματικά ζουμαρισμένα ονόματα */
+    font-size: 25vw;    /* πραγματικά μεγάλο, “ζουμάρει” σε κινητά */
   }
 
   .and {
-    font-size: 12vw;
+    font-size: 15vw;
   }
 
   .details, .invite-text, .reception {
-    font-size: 5vw;        /* πιο εμφανή τα υπόλοιπα κείμενα */
+    font-size: 5vw;
   }
 }
