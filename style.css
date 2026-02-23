@@ -104,16 +104,10 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.8); /* αρχικά λίγο μικρό */
   opacity: 0;
-  transition: opacity 1s ease, transform 1s ease;
-  max-width: 100%;    /* πλήρες πλάτος */
-  padding: 0;         /* αφαιρούμε όλα τα padding */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
-
 .intro {
   font-size: 1rem;
   letter-spacing: 2px;
