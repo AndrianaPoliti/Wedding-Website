@@ -107,8 +107,8 @@ body {
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 1s ease, transform 1s ease;
-  max-width: 100%;      /* πλήρες πλάτος */
-  padding: 0 5px;       /* σχεδόν καθόλου padding για κινητά */
+  max-width: 100%;    /* πλήρες πλάτος */
+  padding: 0;         /* αφαιρούμε όλα τα padding */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -126,14 +126,14 @@ body {
 
 .script {
   font-family: 'Allura', cursive;
-  font-size: 18vw;       /* πολύ μεγαλύτερα γράμματα */
+  font-size: 20vw;     /* πολύ μεγάλο για να καλύπτει κινητά και desktop */
   font-weight: 400;
   margin: 0;
 }
 
 .and {
   font-family: 'Allura', cursive;
-  font-size: 10vw;       /* ανάλογα με τα ονόματα */
+  font-size: 12vw;     /* ανάλογο & */
   font-weight: 300;
   margin: 10px 0;
   color: #7a756f;
