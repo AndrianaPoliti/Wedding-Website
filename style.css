@@ -155,23 +155,3 @@ body {
   margin-top: 40px;
   font-style: italic;
 }
-
-/* Για μικρές οθόνες (κινητά) */
-@media screen and (max-width: 600px) {
-  .invitation {
-    max-width: 95%;           /* σχεδόν όλη η οθόνη */
-    padding: 0 10px;
-  }
-
-  .script {
-    font-size: 12vw;          /* πολύ μεγαλύτερα γράμματα σε κινητό */
-  }
-
-  .and {
-    font-size: 8vw;           /* μεγαλύτερο & */
-  }
-
-  .details, .invite-text, .reception {
-    font-size: 4vw;           /* λίγο μεγαλύτερα τα υπόλοιπα κείμενα */
-  }
-}
