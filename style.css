@@ -101,13 +101,15 @@ body {
 }
 
 .invitation {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.8); /* αρχικά λίγο μικρό */
-  opacity: 0;
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  min-height: 100vh;
+  padding: 120px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+  margin: auto;
 }
+
 .intro {
   font-size: 1rem;
   letter-spacing: 2px;
@@ -119,17 +121,18 @@ body {
 }
 
 .script {
+  display: block;
   font-family: 'Allura', cursive;
-  font-size: 20vw;     /* πολύ μεγάλο για να καλύπτει κινητά και desktop */
+  font-size: 4.5rem;
   font-weight: 400;
-  margin: 0;
 }
 
 .and {
   font-family: 'Allura', cursive;
-  font-size: 12vw;     /* ανάλογο & */
-  font-weight: 300;
-  margin: 10px 0;
+  font-size: 3rem;
+  font-weight: 300; /* πιο λεπτό */
+  display: block;
+  margin: 20px 0;
   color: #7a756f;
 }
 
@@ -153,18 +156,22 @@ body {
   font-style: italic;
 }
 
-
-
+/* Για μικρές οθόνες (κινητά) */
 @media screen and (max-width: 600px) {
+  .invitation {
+    max-width: 95%;           /* σχεδόν όλη η οθόνη */
+    padding: 0 10px;
+  }
+
   .script {
-    font-size: 25vw;    /* πραγματικά μεγάλο, “ζουμάρει” σε κινητά */
+    font-size: 12vw;          /* πολύ μεγαλύτερα γράμματα σε κινητό */
   }
 
   .and {
-    font-size: 15vw;
+    font-size: 8vw;           /* μεγαλύτερο & */
   }
 
   .details, .invite-text, .reception {
-    font-size: 5vw;
+    font-size: 4vw;           /* λίγο μεγαλύτερα τα υπόλοιπα κείμενα */
   }
 }
