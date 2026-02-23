@@ -8,37 +8,11 @@ body {
 .envelope {
   position: fixed;
   inset: 0;
-  background: #f4efe9;
   z-index: 10;
 }
 
-/* TRIANGLES */
-/* TOP */
-.top {
-  clip-path: polygon(0 0, 100% 0, 50% 50%);
-  border-bottom: 3px solid #b8afa5; /* πιο έντονο και πιο visible */
-}
-
-/* BOTTOM */
-.bottom {
-  clip-path: polygon(0 100%, 100% 100%, 50% 50%);
-  border-top: 3px solid #b8afa5;
-}
-
-/* LEFT */
-.left {
-  clip-path: polygon(0 0, 0 100%, 50% 50%);
-  border-right: 3px solid #b8afa5;
-}
-
-/* RIGHT */
-.right {
-  clip-path: polygon(100% 0, 100% 100%, 50% 50%);
-  border-left: 3px solid #b8afa5;
-}
-
-/* TRIANGLES */
-.triangle {
+/* TRIANGLE BACKGROUNDS */
+.triangle[class$="-bg"] {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -46,18 +20,35 @@ body {
   transition: transform 1.2s ease;
 }
 
-/* Περίγραμμα σαν ξεχωριστό layer */
-.triangle::before {
-  content: "";
+/* TRIANGLE BORDERS */
+.triangle[class$="-border"] {
   position: absolute;
-  inset: 0;
-  clip-path: inherit; /* ίδιο shape */
-  border: 2px solid #b8afa5; /* έντονο περίγραμμα */
+  width: 100%;
+  height: 100%;
   background: transparent;
-  pointer-events: none;
+  transition: transform 1.2s ease;
+  border: 3px solid #b8afa5;
+  box-sizing: border-box;
 }
 
-/* SEAL */
+/* Clip-paths για κάθε τρίγωνο */
+.top-bg, .top-border {
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+}
+
+.bottom-bg, .bottom-border {
+  clip-path: polygon(0 100%, 100% 100%, 50% 50%);
+}
+
+.left-bg, .left-border {
+  clip-path: polygon(0 0, 0 100%, 50% 50%);
+}
+
+.right-bg, .right-border {
+  clip-path: polygon(100% 0, 100% 100%, 50% 50%);
+}
+
+/* Seal */
 .seal {
   position: absolute;
   top: 50%;
@@ -76,46 +67,29 @@ body {
   cursor: pointer;
   transition: opacity 0.4s ease;
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  z-index: 20;
 }
 
 /* OPEN ANIMATION */
-.open .top {
+.open .top-bg,
+.open .top-border {
   transform: translateY(-100%);
 }
-
-.open .bottom {
+.open .bottom-bg,
+.open .bottom-border {
   transform: translateY(100%);
 }
-
-.open .left {
+.open .left-bg,
+.open .left-border {
   transform: translateX(-100%);
 }
-
-.open .right {
+.open .right-bg,
+.open .right-border {
   transform: translateX(100%);
 }
-
 .open .seal {
   opacity: 0;
   pointer-events: none;
-}
-
-/* Invitation initially hidden */
-.invitation {
-  opacity: 0;
-  position: relative;
-  z-index: 1;
-  transition: opacity 1.2s ease;
-}
-
-/* Show invitation */
-.invitation.show {
-  opacity: 1;
-}
-
-/* Ensure envelope is above invitation */
-.envelope {
-  z-index: 10;
 }
 
 body {
@@ -182,3 +156,22 @@ body {
   font-style: italic;
 }
 
+/* Για μικρές οθόνες (κινητά) */
+@media screen and (max-width: 600px) {
+  .invitation {
+    max-width: 95%;           /* σχεδόν όλη η οθόνη */
+    padding: 0 10px;
+  }
+
+  .script {
+    font-size: 12vw;          /* πολύ μεγαλύτερα γράμματα σε κινητό */
+  }
+
+  .and {
+    font-size: 8vw;           /* μεγαλύτερο & */
+  }
+
+  .details, .invite-text, .reception {
+    font-size: 4vw;           /* λίγο μεγαλύτερα τα υπόλοιπα κείμενα */
+  }
+}
