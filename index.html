@@ -10,7 +10,47 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+<script>
+const muteBtn = document.getElementById("muteBtn");
+const bgMusic = document.getElementById("bg-music");
+const wave1 = document.getElementById("wave1");
+const wave2 = document.getElementById("wave2");
+
+muteBtn.addEventListener("click", () => {
+  bgMusic.muted = !bgMusic.muted;
+
+  if(bgMusic.muted){
+    wave1.style.display = "none";
+    wave2.style.display = "none";
+  } else {
+    wave1.style.display = "block";
+    wave2.style.display = "block";
+  }
+});
+</script>
+
 <body>
+
+<!-- AUDIO -->
+<audio id="bg-music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SOUND ICON -->
+<svg id="muteBtn"
+     width="22"
+     height="22"
+     viewBox="0 0 24 24"
+     fill="none"
+     stroke="#7a756f"
+     stroke-width="1.8"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     style="position: fixed; top:25px; right:25px; cursor:pointer; z-index:1000;">
+  <polygon points="5 9 9 9 13 5 13 19 9 15 5 15"></polygon>
+  <path id="wave1" d="M16 9c1.5 1.5 1.5 4.5 0 6"></path>
+  <path id="wave2" d="M19 7c3 3 3 7 0 10"></path>
+</svg>
 
 <!-- ENVELOPE OVERLAY -->
 <div class="envelope" id="envelope">
@@ -46,27 +86,33 @@
   </div>
 </section>
 
-<audio id="bg-music" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
 
 <!-- COUNTDOWN -->
 <section class="countdown-section">
   <h2>Counting the days</h2>
+
   <div id="countdown"></div>
 </section>
 
 
 <!-- Memory Game -->
 <div id="memory-game-container">
-  <h1>Island Memory Game 🐚⛵</h1>
+  <h1> Memory Game </h1>
   <div class="grid" id="grid"></div>
   <div class="score" id="memoryScore">Βρήκες 0 από 8 ζευγάρια!</div>
 </div>
 
 <script>
-const icons = ['🐚','⛵','🌴','🌅','🏖️','🏠','🍹','🐠'];
+const icons = [
+  'images/photo1.jpeg',
+  'images/photo2.jpeg',
+  'images/photo3.jpeg',
+  'images/photo4.jpeg',
+  'images/photo5.jpeg',
+  'images/photo6.jpeg',
+  'images/photo7.jpeg',
+  'images/photo8.jpeg'
+];
 let cardValues = [...icons, ...icons];
 let firstCard = null;
 let secondCard = null;
@@ -82,11 +128,15 @@ cardValues.forEach(icon => {
   const card = document.createElement('div');
   card.classList.add('card');
   card.innerHTML = `
-    <div class="card-inner">
-      <div class="card-front">${icon}</div>
-      <div class="card-back"></div>
-    </div>`;
+  <div class="card-inner">
+    <div class="card-front"><img src="${icon}" alt="photo"></div>
+    <div class="card-back"></div>
+  </div>`;
+
+  card.dataset.icon = icon; // αποθηκεύουμε την εικόνα για σύγκριση
   grid.appendChild(card);
+
+  
 
   card.addEventListener('click', () => {
     if(lockBoard || card.classList.contains('flip') || card.classList.contains('matched')) return;
@@ -99,14 +149,14 @@ cardValues.forEach(icon => {
       secondCard = card;
       lockBoard = true;
 
-      const firstIcon = firstCard.querySelector('.card-front').textContent;
-      const secondIcon = secondCard.querySelector('.card-front').textContent;
+      const firstIcon = firstCard.dataset.icon;
+      const secondIcon = secondCard.dataset.icon;
 
-      if(firstIcon === secondIcon){
+if(firstIcon === secondIcon){
         firstCard.classList.add('matched');
         secondCard.classList.add('matched');
         matchedPairs++;
-        memoryScore.textContent = `Βρήκες ${matchedPairs} από 8 ζευγάρια!`;
+        memoryScore.textContent = `You found ${matchedPairs} from 8 pairs!`;
         resetBoard();
       } else {
         setTimeout(()=>{
@@ -126,7 +176,7 @@ function resetBoard(){
 
 <!-- Tennis Pong Game -->
 <div id="tennis-game-container">
-  <h1>Tennis Pong 🎾</h1>
+  <h1>Ping Pong </h1>
   <canvas id="tennisGame" width="400" height="300"></canvas>
   <div class="score" id="tennisScore">Score: 0</div>
   <div id="gameOver" style="margin-top:10px; font-size:1.2rem; color:#e91e63; display:none;">Game Over! 🎾</div>
@@ -166,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function(){
   function drawPaddle(){
     ctx.beginPath();
     ctx.rect(paddleX, canvas.height - paddleHeight -10, paddleWidth, paddleHeight);
-    ctx.fillStyle="#fff";
+    ctx.fillStyle="#7a756f";
     ctx.fill();
     ctx.closePath();
   }
@@ -174,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function(){
   function drawBall(){
     ctx.beginPath();
     ctx.arc(x,y,ballRadius,0,Math.PI*2);
-    ctx.fillStyle="#ffeb3b";
+    ctx.fillStyle="#c5a880";
     ctx.fill();
     ctx.closePath();
   }
@@ -280,9 +330,6 @@ seal.addEventListener("click", () => {
 });
 </script>
 
-<audio id="bg-music" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
 
 <script src="script.js"></script>
 
