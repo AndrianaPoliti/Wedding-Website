@@ -1,337 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Andriana & Iasonas</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
-<script>
-const muteBtn = document.getElementById("muteBtn");
-const bgMusic = document.getElementById("bg-music");
-const wave1 = document.getElementById("wave1");
-const wave2 = document.getElementById("wave2");
-
-muteBtn.addEventListener("click", () => {
-  bgMusic.muted = !bgMusic.muted;
-
-  if(bgMusic.muted){
-    wave1.style.display = "none";
-    wave2.style.display = "none";
-  } else {
-    wave1.style.display = "block";
-    wave2.style.display = "block";
-  }
-});
-</script>
-
 <body>
 
-<!-- AUDIO -->
-<audio id="bg-music" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
+  <audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mpeg" />
+  </audio>
 
-<!-- SOUND ICON -->
-<svg id="muteBtn"
-     width="22"
-     height="22"
-     viewBox="0 0 24 24"
-     fill="none"
-     stroke="#7a756f"
-     stroke-width="1.8"
-     stroke-linecap="round"
-     stroke-linejoin="round"
-     style="position: fixed; top:25px; right:25px; cursor:pointer; z-index:1000;">
-  <polygon points="5 9 9 9 13 5 13 19 9 15 5 15"></polygon>
-  <path id="wave1" d="M16 9c1.5 1.5 1.5 4.5 0 6"></path>
-  <path id="wave2" d="M19 7c3 3 3 7 0 10"></path>
-</svg>
+  <svg id="muteBtn"
+       width="22"
+       height="22"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="#7a756f"
+       stroke-width="1.8"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       style="position: fixed; top:25px; right:25px; cursor:pointer; z-index:1000;">
+    <polygon points="5 9 9 9 13 5 13 19 9 15 5 15"></polygon>
+    <path id="wave1" d="M16 9c1.5 1.5 1.5 4.5 0 6"></path>
+    <path id="wave2" d="M19 7c3 3 3 7 0 10"></path>
+  </svg>
 
-<!-- ENVELOPE OVERLAY -->
-<div class="envelope" id="envelope">
-  <div class="triangle top-bg"></div>
-  <div class="triangle top-border"></div>
-  <div class="triangle bottom-bg"></div>
-  <div class="triangle bottom-border"></div>
-  <div class="triangle left-bg"></div>
-  <div class="triangle left-border"></div>
-  <div class="triangle right-bg"></div>
-  <div class="triangle right-border"></div>
-  <div class="seal" id="seal">A | I</div>
-</div>
-
-
-<!-- INVITATION -->
-<section class="invitation" id="invitation">
-  <h1 class="names">
-    <span class="script">Andriana</span>
-    <span class="and">&amp;</span>
-    <span class="script">Iasonas</span>
-  </h1>
-
-  <p class="invite-text">
-    request the pleasure of your company<br>
-    at their wedding
-  </p>
-
-  <div class="details">
-    <p>JULY 9TH 2026</p>
-    <p>6:00 IN THE AFTERNOON</p>
-    <p>AGIOS KYPRIANOS, ANDROS</p>
+  <div class="language-switcher" aria-label="Language selector">
+    <button type="button" class="lang-btn active" data-lang="en">EN</button>
+    <button type="button" class="lang-btn" data-lang="el">GR</button>
+    <button type="button" class="lang-btn" data-lang="sq">AL</button>
   </div>
-</section>
 
+  <div class="envelope" id="envelope">
+    <div class="triangle top-bg"></div>
+    <div class="triangle top-border"></div>
+    <div class="triangle bottom-bg"></div>
+    <div class="triangle bottom-border"></div>
+    <div class="triangle left-bg"></div>
+    <div class="triangle left-border"></div>
+    <div class="triangle right-bg"></div>
+    <div class="triangle right-border"></div>
+    <div class="seal" id="seal">A | I</div>
+  </div>
 
-<!-- COUNTDOWN -->
-<section class="countdown-section">
-  <h2>Counting the days</h2>
+  <nav class="top-nav" id="topNav" aria-label="Primary">
+    <a href="#program" data-i18n="nav.schedule">Schedule</a>
+    <a href="#locations" data-i18n="nav.locations">Locations</a>
+    <a href="#gift" data-i18n="nav.gift">Gift</a>
+    <a href="#info" data-i18n="nav.info">Info</a>
+    <a href="#weekend" data-i18n="nav.weekend">Weekend</a>
+    <a href="#games" data-i18n="nav.games">Games</a>
+    <a href="#rsvp" data-i18n="nav.rsvp">RSVP</a>
+  </nav>
 
-  <div id="countdown"></div>
-</section>
+  <main>
+    <section class="invitation" id="invitation">
+      <h1 class="names">
+        <span class="script">Andriana</span>
+        <span class="and">&amp;</span>
+        <span class="script">Iasonas</span>
+      </h1>
 
+      <p class="invite-text" data-i18n-html="hero.invite">
+        Request the pleasure of your company<br>at their wedding
+      </p>
 
-<!-- Memory Game -->
-<div id="memory-game-container">
-  <h1> Memory Game </h1>
-  <div class="grid" id="grid"></div>
-  <div class="score" id="memoryScore">Βρήκες 0 από 8 ζευγάρια!</div>
-</div>
+      <div class="details">
+        <p data-i18n="hero.date">JULY 9TH 2026</p>
+        <p data-i18n="hero.time">6:00 IN THE AFTERNOON</p>
+        <p data-i18n="hero.place">AGIOS KYPRIANOS, ANDROS</p>
+      </div>
+    </section>
 
-<script>
-const icons = [
-  'images/photo1.jpeg',
-  'images/photo2.jpeg',
-  'images/photo3.jpeg',
-  'images/photo4.jpeg',
-  'images/photo5.jpeg',
-  'images/photo6.jpeg',
-  'images/photo7.jpeg',
-  'images/photo8.jpeg'
-];
-let cardValues = [...icons, ...icons];
-let firstCard = null;
-let secondCard = null;
-let lockBoard = false;
-let matchedPairs = 0;
+    <section class="countdown-section section" id="countdown-wrap">
+      <div class="container narrow">
+        <h2 class="section-title" data-i18n="countdown.title">Counting the Days</h2>
+        <div id="countdown"></div>
+      </div>
+    </section>
 
-const grid = document.getElementById('grid');
-const memoryScore = document.getElementById('memoryScore');
+    <section class="section event-timeline" id="program">
+      <div class="container narrow">
+        <h2 class="section-title" data-i18n="schedule.title">The Schedule</h2>
+        <p class="section-intro" data-i18n="schedule.intro">
+          We would love for you to celebrate each moment of the day with us.
+        </p>
 
-cardValues.sort(() => 0.5 - Math.random());
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-icon">⛪</div>
+            <div class="timeline-content">
+              <span class="timeline-time" data-i18n="schedule.ceremony.time">5:00 p.m.</span>
+              <h3 data-i18n="schedule.ceremony.title">Religious Ceremony</h3>
+              <p data-i18n="schedule.ceremony.text">Agios Kyprianos Church, Andros</p>
+              <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Agios+Kyprianos+Andros" target="_blank" rel="noopener noreferrer" data-i18n="schedule.ceremony.button">
+                Open church location
+              </a>
+            </div>
+          </div>
 
-cardValues.forEach(icon => {
-  const card = document.createElement('div');
-  card.classList.add('card');
-  card.innerHTML = `
-  <div class="card-inner">
-    <div class="card-front"><img src="${icon}" alt="photo"></div>
-    <div class="card-back"></div>
-  </div>`;
+          <div class="timeline-item">
+            <div class="timeline-icon">🥂</div>
+            <div class="timeline-content">
+              <span class="timeline-time" data-i18n="schedule.cocktail.time">6:30 p.m.</span>
+              <h3 data-i18n="schedule.cocktail.title">Cocktail Hour</h3>
+              <p data-i18n="schedule.cocktail.text">Join us after the ceremony for drinks, warm wishes, and the first beautiful moments of the evening.</p>
+            </div>
+          </div>
 
-  card.dataset.icon = icon; // αποθηκεύουμε την εικόνα για σύγκριση
-  grid.appendChild(card);
+          <div class="timeline-item">
+            <div class="timeline-icon">🍽️</div>
+            <div class="timeline-content">
+              <span class="timeline-time" data-i18n="schedule.reception.time">8:00 p.m.</span>
+              <h3 data-i18n="schedule.reception.title">Dinner Reception</h3>
+              <p data-i18n-html="schedule.reception.text">The reception will take place at <strong>Agios Kyprianos Restaurant</strong>.</p>
+              <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Agios+Kyprianos+Restaurant+Andros" target="_blank" rel="noopener noreferrer" data-i18n="schedule.reception.button">
+                Open reception location
+              </a>
+            </div>
+          </div>
 
-  
+          <div class="timeline-item">
+            <div class="timeline-icon">🎉</div>
+            <div class="timeline-content">
+              <span class="timeline-time" data-i18n="schedule.party.time">9:30 p.m.</span>
+              <h3 data-i18n="schedule.party.title">Party</h3>
+              <p data-i18n="schedule.party.text">Dancing, music, and celebration into the night.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  card.addEventListener('click', () => {
-    if(lockBoard || card.classList.contains('flip') || card.classList.contains('matched')) return;
+    <section class="section locations-section" id="locations">
+      <div class="container">
+        <h2 class="section-title" data-i18n="locations.title">Locations</h2>
+        <p class="section-intro" data-i18n="locations.intro">
+          Everything you need to find the ceremony and the celebration.
+        </p>
 
-    card.classList.add('flip');
+        <div class="info-grid">
+          <div class="info-card">
+            <h3 data-i18n="locations.ceremony.title">Ceremony</h3>
+            <p data-i18n-html="locations.ceremony.text"><strong>Agios Kyprianos Church</strong><br>Andros, Greece</p>
+            <p data-i18n="locations.ceremony.note">Please arrive a little earlier so you can enjoy the moment with us from the very beginning.</p>
+            <a class="primary-link" href="https://www.google.com/maps/search/?api=1&query=Agios+Kyprianos+Andros" target="_blank" rel="noopener noreferrer" data-i18n="locations.button">
+              View on Maps
+            </a>
+          </div>
 
-    if(!firstCard){
-      firstCard = card;
-    } else {
-      secondCard = card;
-      lockBoard = true;
+          <div class="info-card">
+            <h3 data-i18n="locations.reception.title">Reception</h3>
+            <p data-i18n-html="locations.reception.text"><strong>Agios Kyprianos Restaurant</strong><br>Andros, Greece</p>
+            <p data-i18n="locations.reception.note">Join us for dinner, dancing, and a joyful evening of celebration.</p>
+            <a class="primary-link" href="https://www.google.com/maps/search/?api=1&query=Agios+Kyprianos+Restaurant+Andros" target="_blank" rel="noopener noreferrer" data-i18n="locations.button">
+              View on Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      const firstIcon = firstCard.dataset.icon;
-      const secondIcon = secondCard.dataset.icon;
+    <section class="section gift-section" id="gift">
+      <div class="container narrow">
+        <h2 class="section-title" data-i18n="gift.title">Your Presence Is the Greatest Gift</h2>
+        <div class="info-card centered-card">
+          <p data-i18n="gift.p1">Having you with us on our wedding day is truly the most meaningful gift we could ask for.</p>
+          <p data-i18n="gift.p2">As we begin our next chapter together in America, we will not be able to bring many physical gifts with us.</p>
+          <p data-i18n="gift.p3">Your presence is more than enough, but for those who would still like to give something, a contribution to our honeymoon travel fund would be deeply appreciated.</p>
 
-if(firstIcon === secondIcon){
-        firstCard.classList.add('matched');
-        secondCard.classList.add('matched');
-        matchedPairs++;
-        memoryScore.textContent = `You found ${matchedPairs} from 8 pairs!`;
-        resetBoard();
-      } else {
-        setTimeout(()=>{
-          firstCard.classList.remove('flip');
-          secondCard.classList.remove('flip');
-          resetBoard();
-        },1000);
-      }
-    }
-  });
-});
+          <a class="primary-link" href="#" target="_blank" rel="noopener noreferrer" data-i18n="gift.button">
+            Contribute to Our Honeymoon Fund
+          </a>
 
-function resetBoard(){
-  [firstCard, secondCard, lockBoard] = [null, null, false];
-}
-</script>
+          <p class="small-note" data-i18n="gift.note">Add your fund link here when it is ready.</p>
+        </div>
+      </div>
+    </section>
 
-<!-- Tennis Pong Game -->
-<div id="tennis-game-container">
-  <h1>Ping Pong </h1>
-  <canvas id="tennisGame" width="400" height="300"></canvas>
-  <div class="score" id="tennisScore">Score: 0</div>
-  <div id="gameOver" style="margin-top:10px; font-size:1.2rem; color:#e91e63; display:none;">Game Over! 🎾</div>
-  <button id="startBtn">Start Game</button>
-</div>
+    <section class="section useful-info" id="info">
+      <div class="container">
+        <h2 class="section-title" data-i18n="info.title">Useful Information</h2>
 
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  const canvas = document.getElementById('tennisGame');
-  const ctx = canvas.getContext('2d');
+        <div class="info-grid">
+          <div class="info-card">
+            <h3 data-i18n="info.photos.title">Guest Photo Upload</h3>
+            <p data-i18n="info.photos.text">We would love for you to share your photos and videos from the wedding weekend so we can relive every beautiful memory together.</p>
+            <a class="primary-link" href="#" target="_blank" rel="noopener noreferrer" data-i18n="info.photos.button">
+              Upload Photos Here
+            </a>
+          </div>
 
-  const paddleWidth = 80;
-  const paddleHeight = 10;
-  let paddleX = (canvas.width - paddleWidth)/2;
+          <div class="info-card">
+            <h3 data-i18n="info.dress.title">Dress Code</h3>
+            <p data-i18n="info.dress.text">Elegant summer attire. We recommend comfortable shoes so you can enjoy the celebration and dance all night long.</p>
+          </div>
 
-  const ballRadius = 8;
-  let x = canvas.width/2;
-  let y = canvas.height-30;
-  let dx = 2;
-  let dy = -2;
+          <div class="info-card">
+            <h3 data-i18n="info.smoking.title">A Gentle Note</h3>
+            <p data-i18n="info.smoking.text1">In the spirit of keeping the celebration pleasant and comfortable for all of our guests, we kindly ask that smoking not take place during the event itself.</p>
+            <p data-i18n="info.smoking.text2">For anyone who wishes, a designated smoking area will be available a little further away.</p>
+          </div>
 
-  let score = 0;
-  let isGameOver = false;
-  let gameStarted = false;
+          <div class="info-card">
+            <h3 data-i18n="info.transport.title">Transportation</h3>
+            <p data-i18n="info.transport.text">Please plan to arrive a little early for the ceremony. More details about access, parking, and local directions can be added here.</p>
+          </div>
 
-  const scoreEl = document.getElementById('tennisScore');
-  const gameOverEl = document.getElementById('gameOver');
-  const startBtn = document.getElementById('startBtn');
+          <div class="info-card">
+            <h3 data-i18n="info.contact.title">Contact</h3>
+            <p data-i18n="info.contact.text">If you need help with accommodation, transportation, or anything else, feel free to reach out to us.</p>
+            <p class="small-note" data-i18n="info.contact.note">You can add a phone number, WhatsApp link, or email here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  document.addEventListener("mousemove", e=>{
-    if(!gameStarted) return;
-    const rect = canvas.getBoundingClientRect();
-    const relativeX = e.clientX - rect.left;
-    paddleX = Math.max(0, Math.min(canvas.width - paddleWidth, relativeX - paddleWidth/2));
-  });
+    <section class="section weekend-section" id="weekend">
+      <div class="container narrow">
+        <h2 class="section-title" data-i18n="weekend.title">Wedding Weekend</h2>
+        <p class="section-intro" data-i18n="weekend.intro">
+          For those staying with us a little longer, here are a few extra moments to enjoy together.
+        </p>
 
-  function drawPaddle(){
-    ctx.beginPath();
-    ctx.rect(paddleX, canvas.height - paddleHeight -10, paddleWidth, paddleHeight);
-    ctx.fillStyle="#7a756f";
-    ctx.fill();
-    ctx.closePath();
-  }
+        <div class="weekend-list">
+          <div class="weekend-item">
+            <div class="weekend-date">10/07</div>
+            <div class="weekend-text">
+              <h3 data-i18n="weekend.tennis.title">6:00 p.m. — Tennis with the Bride & Groom</h3>
+              <p data-i18n="weekend.tennis.text">Come watch the bride and groom play tennis and enjoy a relaxed evening together.</p>
+            </div>
+          </div>
 
-  function drawBall(){
-    ctx.beginPath();
-    ctx.arc(x,y,ballRadius,0,Math.PI*2);
-    ctx.fillStyle="#c5a880";
-    ctx.fill();
-    ctx.closePath();
-  }
+          <div class="weekend-item">
+            <div class="weekend-date">11/07</div>
+            <div class="weekend-text">
+              <h3 data-i18n="weekend.swim.title">Morning Swim</h3>
+              <p data-i18n="weekend.swim.text">Join us for a peaceful morning by the sea.</p>
+            </div>
+          </div>
 
-  function draw(){
-    if(isGameOver || !gameStarted) return;
+          <div class="weekend-item">
+            <div class="weekend-date">11/07</div>
+            <div class="weekend-text">
+              <h3 data-i18n="weekend.race.title">7:00 p.m. — 5km Race for Andriana & Iasonas' Wedding</h3>
+              <p data-i18n="weekend.race.text">A fun, lighthearted event for anyone ready for a little energy and a lot of laughter.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    drawBall();
-    drawPaddle();
+    <section class="section games-section" id="games">
+      <div class="container">
+        <h2 class="section-title" data-i18n="games.title">A Little Fun Before the Big Day</h2>
 
-    if(x + dx > canvas.width - ballRadius || x + dx < ballRadius) dx = -dx;
-    if(y + dy < ballRadius) dy = -dy;
-    else if(y + dy > canvas.height - ballRadius - 10){
-      if(x > paddleX && x < paddleX + paddleWidth){
-        dy = -dy;
-        score++;
-        scoreEl.textContent = `Score: ${score}`;
-      } else {
-        isGameOver = true;
-        gameOverEl.style.display = "block";
-      }
-    }
+        <div class="grid-2">
+          <div class="card">
+            <div id="memory-game-container">
+              <h3 class="game-title" data-i18n="games.memory.title">Memory Game</h3>
+              <div class="grid" id="grid"></div>
+              <div class="score" id="memoryScore">You found 0 out of 8 pairs.</div>
+            </div>
+          </div>
 
-    x += dx;
-    y += dy;
+          <div class="card">
+            <div id="tennis-game-container">
+              <h3 class="game-title" data-i18n="games.pingpong.title">Ping Pong</h3>
+              <canvas id="tennisGame" width="400" height="300"></canvas>
+              <div class="score" id="tennisScore">Score: 0</div>
+              <div id="gameOver">Game Over! 🎾</div>
+              <button id="startBtn" type="button" data-i18n="games.pingpong.button">Start Game</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    if(!isGameOver) requestAnimationFrame(draw);
-  }
+    <section class="section rsvp-section" id="rsvp">
+      <div class="container narrow">
+        <h2 class="section-title" data-i18n="rsvp.title">RSVP</h2>
+        <p class="section-intro" data-i18n="rsvp.intro">
+          We would be so happy to celebrate with you. Please let us know if you will be joining us.
+        </p>
 
-  startBtn.addEventListener("click", ()=>{
-    if(!gameStarted){
-      gameStarted = true;
-      isGameOver = false;
-      gameOverEl.style.display="none";
-      x = canvas.width/2;
-      y = canvas.height-30;
-      dx = 2;
-      dy = -2;
-      score = 0;
-      scoreEl.textContent = `Score: ${score}`;
-      draw();
-    }
-  });
-});
-</script>
+        <form id="rsvp-form">
+          <input type="text" id="name" placeholder="Your Name" required data-i18n-placeholder="rsvp.name">
+          <select id="attendance">
+            <option value="yes" data-i18n="rsvp.attending">Joyfully attending</option>
+            <option value="no" data-i18n="rsvp.declining">Regretfully declining</option>
+          </select>
+          <input type="number" id="guests" placeholder="Number of guests" min="0" data-i18n-placeholder="rsvp.guests">
+          <textarea id="message" placeholder="Leave a message" data-i18n-placeholder="rsvp.message"></textarea>
+          <button type="submit" data-i18n="rsvp.button">Send RSVP</button>
+        </form>
+      </div>
+    </section>
 
+    <footer class="footer">
+      <p data-i18n="footer.text">With love, Andriana & Iasonas</p>
+    </footer>
+  </main>
 
-<!-- RSVP -->
-<section class="rsvp-section">
-  <h2>RSVP</h2>
-
-  <form id="rsvp-form">
-    <input type="text" id="name" placeholder="Your Name" required>
-
-    <select id="attendance">
-      <option value="yes">Joyfully attending</option>
-      <option value="no">Regretfully declining</option>
-    </select>
-
-    <input type="number" id="guests" placeholder="Number of guests">
-
-    <textarea id="message" placeholder="Leave a message"></textarea>
-
-    <button type="submit">Send</button>
-  </form>
-</section>
-
-
-<!-- Scripts at the bottom -->
-<script>
-const seal = document.getElementById("seal");
-const envelope = document.getElementById("envelope");
-const invitation = document.getElementById("invitation");
-const music = document.getElementById("bg-music");
-
-seal.addEventListener("click", () => {
-
-  /* Envelope animation */
-  seal.style.opacity = "0";
-  envelope.classList.add("open");
-
-  setTimeout(() => {
-    invitation.classList.add("show");
-  }, 900);
-
-  setTimeout(() => {
-    envelope.style.display = "none";
-  }, 1500);
-
-  /* 🎵 Music start */
-  music.volume = 0;
-  music.play();
-
-  let fadeAudio = setInterval(() => {
-    if (music.volume < 0.5) {
-      music.volume += 0.02;
-    } else {
-      clearInterval(fadeAudio);
-    }
-  }, 200);
-
-});
-</script>
-
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
