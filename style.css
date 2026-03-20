@@ -2,13 +2,6 @@
 /* GLOBAL */
 /* ============================= */
 
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-
 :root {
   --bg: #f4efe9;
   --bg-soft: #f9f6f2;
@@ -26,22 +19,6 @@ body {
 html {
   scroll-behavior: smooth;
 }
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: #f4efe9;
-  color: #7a756f;
-  font-family: "Cormorant Garamond", serif;
-  text-align: center;
-  overflow-x: hidden;
-}
-
 
 * {
   box-sizing: border-box;
@@ -159,11 +136,9 @@ strong {
   transform: translateX(-50%);
   z-index: 30;
   display: flex;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: calc(100vw - 32px);
-  width: max-content;
   padding: 10px 16px;
   background: rgba(255,255,255,0.72);
   backdrop-filter: blur(10px);
@@ -174,6 +149,7 @@ strong {
   pointer-events: none;
   transition: opacity 0.4s ease;
 }
+
 .top-nav.show {
   opacity: 1;
   pointer-events: auto;
@@ -324,17 +300,13 @@ strong {
 
 .invitation {
   min-height: 100vh;
-  width: 100%;
   max-width: 600px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   opacity: 0;
   transition: opacity 1.5s ease;
-  text-align: center;
 }
 
 .invitation.show {
@@ -363,28 +335,26 @@ strong {
 
 .invite-text {
   margin-top: 40px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  font-weight: 400;
-  line-height: 1.7;
+  font-size: 1.2rem;
+  line-height: 1.6;
   color: #7a756f;
-  letter-spacing: 0.2px;
-  text-transform: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
 }
 
-
 .details {
-  margin-top: 52px;
+  margin-top: 40px;
+  letter-spacing: 2px;
+  color: #7a756f;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .details p {
   margin: 8px 0;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.98rem;
-  font-weight: 500;
   color: #7a756f;
-  letter-spacing: 2.4px;
-  text-transform: uppercase;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 #invitation .invite-text,
@@ -665,17 +635,7 @@ button:hover {
 /* ============================= */
 
 .games-section .card {
-  width: 100%;
-  max-width: 520px;
   padding: 24px 18px 28px;
-  display: flex;
-  justify-content: center;
-}
-
-.games-section .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .game-title {
@@ -701,23 +661,11 @@ button:hover {
 }
 
 #tennisGame {
-  display: block;
   width: 100%;
   max-width: 400px;
-  height: auto;
-  margin: 0 auto;
   border-radius: 14px;
   background: rgba(255,255,255,0.5);
   border: 1px solid rgba(122,117,111,0.12);
-}
-
-#memory-game-container,
-#tennis-game-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
 }
 
 #memory-game-container .grid {
@@ -726,19 +674,7 @@ button:hover {
   grid-template-rows: repeat(4, 120px);
   gap: 1rem;
   justify-content: center;
-  margin: 1rem auto 0;
-}
-
-.container,
-.container.narrow,
-.info-grid,
-.grid-2,
-.timeline,
-.timeline-item,
-.info-card,
-.card,
-.weekend-item {
-  max-width: 100%;
+  margin-top: 1rem;
 }
 
 #memory-game-container .memory-card {
@@ -917,13 +853,8 @@ textarea {
 @media (max-width: 900px) {
   .info-grid,
   .grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  width: 100%;
-  align-items: start;
-  justify-items: center;
-}
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -932,19 +863,15 @@ textarea {
   }
 
   .top-nav {
-  top: 72px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100vw - 24px);
-  max-width: calc(100vw - 24px);
-  border-radius: 22px;
-  padding: 10px 12px;
-  gap: 8px 12px;
-}
+    top: 72px;
+    width: calc(100% - 24px);
+    border-radius: 22px;
+    padding: 12px;
+    gap: 10px 14px;
+  }
 
   .top-nav a {
     font-size: 0.92rem;
-    white-space: nowrap;
   }
 
   .timeline::before {
