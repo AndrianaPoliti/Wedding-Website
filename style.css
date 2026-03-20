@@ -665,7 +665,17 @@ button:hover {
 /* ============================= */
 
 .games-section .card {
+  width: 100%;
+  max-width: 520px;
   padding: 24px 18px 28px;
+  display: flex;
+  justify-content: center;
+}
+
+.games-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .game-title {
@@ -701,13 +711,22 @@ button:hover {
   border: 1px solid rgba(122,117,111,0.12);
 }
 
+#memory-game-container,
+#tennis-game-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 #memory-game-container .grid {
   display: grid;
   grid-template-columns: repeat(4, 90px);
   grid-template-rows: repeat(4, 120px);
   gap: 1rem;
   justify-content: center;
-  margin-top: 1rem;
+  margin: 1rem auto 0;
 }
 
 .container,
@@ -898,8 +917,13 @@ textarea {
 @media (max-width: 900px) {
   .info-grid,
   .grid-2 {
-    grid-template-columns: 1fr;
-  }
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  align-items: start;
+  justify-items: center;
+}
 }
 
 @media (max-width: 768px) {
