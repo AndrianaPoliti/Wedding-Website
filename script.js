@@ -1,4 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.scrollTo(0, 0);
+
+if (window.location.hash) {
+  history.replaceState(null, "", window.location.pathname);
+}
+
   const translations = {
     en: {
       nav: {
@@ -13,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       hero: {
         invite: "Request the pleasure of your company<br>at their wedding",
         date: "JULY 9TH 2026",
-        time: "6:00 IN THE AFTERNOON",
+        time: "7:00 IN THE AFTERNOON",
         place: "AGIOS KYPRIANOS, ANDROS"
       },
       countdown: {
@@ -28,24 +39,29 @@ document.addEventListener("DOMContentLoaded", () => {
         title: "The Schedule",
         intro: "We would love for you to celebrate each moment of the day with us.",
         ceremony: {
-          time: "5:00 p.m.",
+          time: "7:00 p.m.",
           title: "Religious Ceremony",
           text: "Agios Kyprianos Church, Andros",
           button: "Open church location"
         },
-        cocktail: {
-          time: "6:30 p.m.",
-          title: "Cocktail Hour",
-          text: "Join us after the ceremony for drinks, warm wishes, and the first beautiful moments of the evening."
+        entrance: {
+          time: "8:30 p.m.",
+          title: "Couple's Entrance",
+          text: "The bride and groom make their entrance and welcome everyone to the celebration."
         },
-        reception: {
-          time: "8:00 p.m.",
-          title: "Dinner Reception",
-          text: "The reception will take place at <strong>Agios Kyprianos Restaurant</strong>.",
+        dinner: {
+          time: "9:00 p.m.",
+          title: "Dinner",
+          text: "Dinner will be served at <strong>Agios Kyprianos Restaurant</strong>.",
           button: "Open reception location"
         },
+        firstDance: {
+          time: "10:30 p.m.",
+          title: "First Dance",
+          text: "A special moment as we share our first dance together."
+        },
         party: {
-          time: "9:30 p.m.",
+          time: "11:00 p.m.",
           title: "Party",
           text: "Dancing, music, and celebration into the night."
         }
@@ -157,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
       hero: {
         invite: "Ζητούν την τιμή της παρουσίας σας<br>στον γάμο τους",
         date: "9 ΙΟΥΛΙΟΥ 2026",
-        time: "6:00 ΤΟ ΑΠΟΓΕΥΜΑ",
+        time: "7:00 ΤΟ ΑΠΟΓΕΥΜΑ",
         place: "ΑΓΙΟΣ ΚΥΠΡΙΑΝΟΣ, ΑΝΔΡΟΣ"
       },
       countdown: {
@@ -172,24 +188,29 @@ document.addEventListener("DOMContentLoaded", () => {
         title: "Το Πρόγραμμα",
         intro: "Θα χαρούμε πολύ να μοιραστούμε μαζί σας κάθε στιγμή αυτής της ημέρας.",
         ceremony: {
-          time: "5:00 μ.μ.",
+          time: "7:00 μ.μ.",
           title: "Θρησκευτική Τελετή",
           text: "Ιερός Ναός Αγίου Κυπριανού, Άνδρος",
           button: "Άνοιγμα τοποθεσίας εκκλησίας"
         },
-        cocktail: {
-          time: "6:30 μ.μ.",
-          title: "Cocktail Hour",
-          text: "Μετά την τελετή, σας περιμένουμε για ποτό, ευχές και τις πρώτες όμορφες στιγμές της βραδιάς."
+        entrance: {
+          time: "8:30 μ.μ.",
+          title: "Είσοδος Ζευγαριού",
+          text: "Η νύφη και ο γαμπρός κάνουν την είσοδό τους και καλωσορίζουν όλους στη γιορτή."
         },
-        reception: {
-          time: "8:00 μ.μ.",
-          title: "Δείπνο & Δεξίωση",
-          text: "Η δεξίωση θα πραγματοποιηθεί στο <strong>Εστιατόριο Άγιος Κυπριανός</strong>.",
+        dinner: {
+          time: "9:00 μ.μ.",
+          title: "Φαγητό",
+          text: "Το δείπνο θα σερβιριστεί στο <strong>Εστιατόριο Άγιος Κυπριανός</strong>.",
           button: "Άνοιγμα τοποθεσίας δεξίωσης"
         },
+        firstDance: {
+          time: "10:30 μ.μ.",
+          title: "Πρώτος Χορός",
+          text: "Μια ξεχωριστή στιγμή καθώς μοιραζόμαστε τον πρώτο μας χορό."
+        },
         party: {
-          time: "9:30 μ.μ.",
+          time: "11:00 μ.μ.",
           title: "Party",
           text: "Χορός, μουσική και γιορτή μέχρι αργά."
         }
@@ -301,7 +322,7 @@ document.addEventListener("DOMContentLoaded", () => {
       hero: {
         invite: "Kërkojnë kënaqësinë e pranisë suaj<br>në dasmën e tyre",
         date: "9 KORRIK 2026",
-        time: "6:00 PASDITE",
+        time: "7:00 PASDITE",
         place: "AGIOS KYPRIANOS, ANDROS"
       },
       countdown: {
@@ -316,26 +337,31 @@ document.addEventListener("DOMContentLoaded", () => {
         title: "Programi",
         intro: "Do të na gëzonte shumë të festonim së bashku çdo moment të kësaj dite.",
         ceremony: {
-          time: "5:00 pasdite",
+          time: "7:00 pasdite",
           title: "Ceremonia Fetare",
           text: "Kisha Agios Kyprianos, Andros",
           button: "Hap vendndodhjen e kishës"
         },
-        cocktail: {
-          time: "6:30 pasdite",
-          title: "Cocktail Hour",
-          text: "Pas ceremonisë, ju presim për pije, urime dhe momentet e para të bukura të mbrëmjes."
+        entrance: {
+          time: "8:30 pasdite",
+          title: "Hyrja e Çiftit",
+          text: "Nusja dhe dhëndri bëjnë hyrjen e tyre dhe mirëpresin të gjithë në festë."
         },
-        reception: {
-          time: "8:00 pasdite",
-          title: "Darka & Pritja",
-          text: "Pritja do të zhvillohet në <strong>Restorantin Agios Kyprianos</strong>.",
+        dinner: {
+          time: "9:00 pasdite",
+          title: "Darka",
+          text: "Darka do të shërbehet në <strong>Restorantin Agios Kyprianos</strong>.",
           button: "Hap vendndodhjen e pritjes"
         },
+        firstDance: {
+          time: "10:30 pasdite",
+          title: "Vallja e Parë",
+          text: "Një moment i veçantë teksa ndajmë vallen tonë të parë së bashku."
+        },
         party: {
-          time: "9:30 pasdite",
+          time: "11:00 pasdite",
           title: "Party",
-          text: "Vallëzim, muzikë dhe festë deri vonë."
+          text: "Muzikë, vallëzim dhe festë deri vonë."
         }
       },
       locations: {
@@ -435,9 +461,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentLang = "en";
 
-  // =======================
-  // HELPERS
-  // =======================
   function getNestedValue(obj, path) {
     return path.split(".").reduce((acc, part) => acc && acc[part], obj);
   }
@@ -466,33 +489,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateMemoryScore();
     updatePingPongTexts();
+    updateCountdown();
 
     document.querySelectorAll(".lang-btn").forEach((btn) => {
       btn.classList.toggle("active", btn.dataset.lang === lang);
     });
   }
 
-  // =======================
-  // LANGUAGE SWITCHER
-  // =======================
   document.querySelectorAll(".lang-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       applyTranslations(btn.dataset.lang);
     });
   });
 
-  // =======================
-  // MEMORY GAME
-  // =======================
   const icons = [
-    "images/photo1.JPEG",
-    "images/photo2.JPEG",
-    "images/photo3.JPEG",
-    "images/photo4.JPEG",
-    "images/photo5.JPEG",
-    "images/photo6.JPEG",
-    "images/photo7.JPEG",
-    "images/photo8.JPEG"
+    "images/photo1.jpeg",
+    "images/photo2.jpeg",
+    "images/photo3.jpeg",
+    "images/photo4.jpeg",
+    "images/photo5.jpeg",
+    "images/photo6.jpeg",
+    "images/photo7.jpeg",
+    "images/photo8.jpeg"
   ];
 
   let cardValues = [...icons, ...icons];
@@ -569,9 +587,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =======================
-  // PING PONG GAME
-  // =======================
   const canvas = document.getElementById("tennisGame");
   const scoreEl = document.getElementById("tennisScore");
   const gameOverEl = document.getElementById("gameOver");
@@ -702,9 +717,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =======================
-  // ENVELOPE + MUSIC
-  // =======================
   const seal = document.getElementById("seal");
   const envelope = document.getElementById("envelope");
   const invitation = document.getElementById("invitation");
@@ -713,6 +725,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (seal && envelope && invitation && music) {
     seal.addEventListener("click", () => {
+      window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto"
+      });
+      
       seal.style.opacity = "0";
       envelope.classList.add("open");
 
@@ -738,9 +756,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =======================
-  // MUTE BUTTON
-  // =======================
   const muteBtn = document.getElementById("muteBtn");
   const wave1 = document.getElementById("wave1");
   const wave2 = document.getElementById("wave2");
@@ -770,15 +785,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =======================
-  // COUNTDOWN
-  // =======================
   const countdownEl = document.getElementById("countdown");
 
   function updateCountdown() {
     if (!countdownEl) return;
 
-    const weddingDate = new Date("July 9, 2026 18:00:00").getTime();
+    const weddingDate = new Date("July 9, 2026 19:00:00").getTime();
     const now = Date.now();
     const distance = weddingDate - now;
 
@@ -805,9 +817,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(updateCountdown, 1000);
   }
 
-  // =======================
-  // REVEAL ANIMATIONS
-  // =======================
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const revealEls = document.querySelectorAll(
@@ -892,9 +901,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =======================
-  // RSVP
-  // =======================
   const rsvpForm = document.getElementById("rsvp-form");
 
   if (rsvpForm) {
@@ -905,6 +911,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // initial render
   applyTranslations("en");
 });
