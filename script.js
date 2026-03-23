@@ -68,7 +68,6 @@ if (window.location.hash) {
       },
       locations: {
         title: "Locations",
-        intro: "Everything you need to find the ceremony and the celebration.",
         button: "View on Maps",
         ceremony: {
           title: "Ceremony",
@@ -82,53 +81,32 @@ if (window.location.hash) {
         }
       },
       gift: {
-        title: "Your Presence Is the Greatest Gift",
-        p1: "Having you with us on our wedding day is truly the most meaningful gift we could ask for.",
-        p2: "As we begin our next chapter together in America, we will not be able to bring many physical gifts with us.",
-        p3: "Your presence is more than enough, but for those who would still like to give something, a contribution to our honeymoon travel fund would be deeply appreciated.",
-        button: "Contribute to Our Honeymoon Fund",
-        note: "Add your fund link here when it is ready."
-      },
+       title: "Your Presence Is the Greatest Gift",
+       p1: "Having you with us on our wedding day is truly the most meaningful gift we could ask for.",
+       p2: "Your presence is truly more than enough, but for anyone who would still like to honor us with a gift, a contribution to our honeymoon travel fund would be deeply appreciated.",
+       button: "Contribute to Our Honeymoon Fund"
+},
       info: {
         title: "Useful Information",
         photos: {
           title: "Guest Photo Upload",
-          text: "We would love for you to share your photos and videos from the wedding weekend so we can relive every beautiful memory together.",
-          button: "Upload Photos Here"
+          text1: "We would love for you to share your photos and videos from the wedding weekend so we can relive every beautiful memory together.",
+          text2: "We will shortly create a space for this purpose."
+        /*  button: "Upload Photos Here" */
         },
         dress: {
           title: "Dress Code",
-          text: "Elegant summer attire. We recommend comfortable shoes so you can enjoy the celebration and dance all night long."
+          text: "Elegant summer island attire. We recommend comfortable shoes so you can enjoy the celebration and dance all night long."
         },
         smoking: {
           title: "A Gentle Note",
           text1: "In the spirit of keeping the celebration pleasant and comfortable for all of our guests, we kindly ask that smoking not take place during the event itself.",
-          text2: "For anyone who wishes, a designated smoking area will be available a little further away."
-        },
-        transport: {
-          title: "Transportation",
-          text: "Please plan to arrive a little early for the ceremony. More details about access, parking, and local directions can be added here."
+          text2: "For anyone who wishes, a designated area will be available nearby."
         },
         contact: {
           title: "Contact",
           text: "If you need help with accommodation, transportation, or anything else, feel free to reach out to us.",
           note: "You can add a phone number, WhatsApp link, or email here."
-        }
-      },
-      weekend: {
-        title: "Wedding Weekend",
-        intro: "For those staying with us a little longer, here are a few extra moments to enjoy together.",
-        tennis: {
-          title: "6:00 p.m. — Tennis with the Bride & Groom",
-          text: "Come watch the bride and groom play tennis and enjoy a relaxed evening together."
-        },
-        swim: {
-          title: "Morning Swim",
-          text: "Join us for a peaceful morning by the sea."
-        },
-        race: {
-          title: "7:00 p.m. — 5km Race for Andriana & Iasonas' Wedding",
-          text: "A fun, lighthearted event for anyone ready for a little energy and a lot of laughter."
         }
       },
       games: {
@@ -148,12 +126,13 @@ if (window.location.hash) {
         title: "RSVP",
         intro: "We would be so happy to celebrate with you. Please let us know if you will be joining us.",
         name: "Your Name",
+        email: "Your Email",
         attending: "Joyfully attending",
         declining: "Regretfully declining",
         guests: "Number of guests",
         message: "Leave a message",
         button: "Send RSVP",
-        success: "Thank you for your RSVP!"
+        success: "Thank you very much for your response!"
       },
       footer: {
         text: "With love, Andriana & Iasonas"
@@ -217,7 +196,6 @@ if (window.location.hash) {
       },
       locations: {
         title: "Τοποθεσίες",
-        intro: "Όλες οι πληροφορίες που χρειάζεστε για την τελετή και τη γιορτή.",
         button: "Προβολή στο Maps",
         ceremony: {
           title: "Τελετή",
@@ -231,28 +209,27 @@ if (window.location.hash) {
         }
       },
       gift: {
-        title: "Η Παρουσία σας Είναι το Ωραιότερο Δώρο",
-        p1: "Το να σας έχουμε κοντά μας την ημέρα του γάμου μας είναι για εμάς το πιο πολύτιμο δώρο.",
-        p2: "Καθώς το νέο μας ξεκίνημα θα μας βρει στην Αμερική, δεν θα μπορέσουμε να μεταφέρουμε μαζί μας πολλά υλικά δώρα.",
-        p3: "Η παρουσία σας είναι υπεραρκετή, όμως για όποιον επιθυμεί να μας τιμήσει με κάτι επιπλέον, μια προαιρετική συνεισφορά στο honeymoon travel fund μας θα μας χαροποιούσε ιδιαίτερα.",
-        button: "Συνεισφορά στο Honeymoon Fund",
-        note: "Προσθέστε εδώ το link του fund όταν είναι έτοιμο."
-      },
+         title: "Η Παρουσία σας Είναι το Ωραιότερο Δώρο",
+         p1: "Το να σας έχουμε κοντά μας την ημέρα του γάμου μας είναι για εμάς το πιο πολύτιμο δώρο.",
+         p2: "Η παρουσία σας είναι πραγματικά υπεραρκετή, όμως για όποιον θα ήθελε παρ’ όλα αυτά να μας τιμήσει με ένα δώρο, μια συνεισφορά στο honeymoon travel fund μας θα εκτιμηθεί βαθιά.",
+         button: "Συνεισφορά στο Honeymoon Fund"
+},
       info: {
         title: "Χρήσιμες Πληροφορίες",
         photos: {
           title: "Ανέβασμα Φωτογραφιών",
-          text: "Θα χαρούμε πολύ να μοιραστείτε μαζί μας τις φωτογραφίες και τα βίντεο από το γαμήλιο Σαββατοκύριακο, ώστε να ξαναζήσουμε κάθε όμορφη στιγμή.",
-          button: "Ανεβάστε Φωτογραφίες Εδώ"
+          text1: "Θα χαρούμε πολύ να μοιραστείτε μαζί μας τις φωτογραφίες και τα βίντεο από το γαμήλιο Σαββατοκύριακο, ώστε να ξαναζήσουμε κάθε όμορφη στιγμή μαζί.",
+          text2: "Σύντομα θα δημιουργήσουμε έναν ειδικό χώρο για αυτόν τον σκοπό."
+       /*   button: "Ανεβάστε Φωτογραφίες Εδώ" */
         },
         dress: {
           title: "Dress Code",
-          text: "Elegant summer attire. Προτείνουμε άνετα παπούτσια για να απολαύσετε τη γιορτή και τον χορό μέχρι αργά."
+          text: "Καλοκαιρινή island chic ενδυμασία. Προτείνουμε άνετα παπούτσια ώστε να απολαύσετε τη γιορτή και τον χορό μέχρι αργά."
         },
         smoking: {
           title: "Μια Μικρή Σημείωση",
           text1: "Με σκοπό η ατμόσφαιρα της βραδιάς να παραμείνει ευχάριστη και άνετη για όλους τους καλεσμένους μας, θα θέλαμε ευγενικά να αποφευχθεί το κάπνισμα κατά τη διάρκεια της εκδήλωσης.",
-          text2: "Για όποιον το επιθυμεί, θα υπάρχει ειδικά διαμορφωμένος χώρος λίγο πιο πέρα."
+          text2: "Για όποιον το επιθυμεί, θα υπάρχει ειδικά διαμορφωμένος χώρος σε κοντινή απόσταση."
         },
         transport: {
           title: "Μετακίνηση",
@@ -262,22 +239,6 @@ if (window.location.hash) {
           title: "Επικοινωνία",
           text: "Αν χρειαστείτε βοήθεια με διαμονή, μετακίνηση ή οτιδήποτε άλλο, μπορείτε να επικοινωνήσετε μαζί μας.",
           note: "Μπορείτε να προσθέσετε εδώ τηλέφωνο, WhatsApp link ή email."
-        }
-      },
-      weekend: {
-        title: "Γαμήλιο Σαββατοκύριακο",
-        intro: "Για όσους μείνετε μαζί μας λίγο περισσότερο, ετοιμάσαμε μερικές ακόμη όμορφες στιγμές.",
-        tennis: {
-          title: "6:00 μ.μ. — Tennis with the Bride & Groom",
-          text: "Ελάτε να δείτε τη νύφη και τον γαμπρό να παίζουν τένις και να απολαύσουμε μαζί ένα χαλαρό απόγευμα."
-        },
-        swim: {
-          title: "Πρωινό Μπάνιο",
-          text: "Ελάτε μαζί μας για ένα ήρεμο πρωινό δίπλα στη θάλασσα."
-        },
-        race: {
-          title: "7:00 μ.μ. — 5km Race for Andriana & Iasonas' Wedding",
-          text: "Ένα fun event για όποιον έχει διάθεση για λίγη ενέργεια και πολύ γέλιο."
         }
       },
       games: {
@@ -297,12 +258,13 @@ if (window.location.hash) {
         title: "RSVP",
         intro: "Θα χαρούμε πολύ να γιορτάσουμε μαζί σας. Παρακαλούμε ενημερώστε μας αν θα μπορέσετε να παρευρεθείτε.",
         name: "Το όνομά σας",
+        email: "Το email σας",
         attending: "Με χαρά θα παρευρεθώ",
         declining: "Με λύπη δεν θα μπορέσω",
         guests: "Αριθμός καλεσμένων",
         message: "Αφήστε ένα μήνυμα",
         button: "Αποστολή RSVP",
-        success: "Σας ευχαριστούμε για το RSVP!"
+        success: "Ευχαριστούμε πολύ για την απάντησή σας!"
       },
       footer: {
         text: "Με αγάπη, Ανδριάνα & Ιάσονας"
@@ -382,51 +344,30 @@ if (window.location.hash) {
       gift: {
         title: "Prania Juaj Është Dhurata Më e Bukur",
         p1: "Prania juaj në ditën e dasmës sonë është vërtet dhurata më e çmuar që mund të kërkonim.",
-        p2: "Ndërsa kapitulli ynë i ri do të na çojë në Amerikë, nuk do të mund të marrim me vete shumë dhurata materiale.",
-        p3: "Prania juaj është më se e mjaftueshme, por për këdo që dëshiron të na dhurojë diçka më tepër, një kontribut për fondin e muajit të mjaltit do të vlerësohej shumë.",
-        button: "Kontribuo për Honeymoon Fund",
-        note: "Vendosni këtu linkun e fondit kur të jetë gati."
+        p2: "Prania juaj është vërtet më se e mjaftueshme, por për këdo që do të dëshironte gjithsesi të na nderonte me një dhuratë, një kontribut për fondin tonë të muajit të mjaltit do të vlerësohej shumë.",
+        button: "Kontribuo për Honeymoon Fund"
       },
       info: {
         title: "Informacione të Dobishme",
         photos: {
           title: "Ngarkimi i Fotove",
-          text: "Do të na pëlqente shumë të ndani me ne fotot dhe videot nga fundjava e dasmës, që t’i rijetojmë së bashku të gjitha kujtimet e bukura.",
-          button: "Ngarko Fotot Këtu"
+          text1: "Do të na pëlqente shumë të ndani me ne fotot dhe videot nga fundjava e dasmës, që t’i rijetojmë së bashku të gjitha kujtimet e bukura.",
+          text2: "Së shpejti do të krijojmë një hapësirë të posaçme për këtë qëllim."
+      /*    button: "Ngarko Fotot Këtu" */
         },
         dress: {
           title: "Dress Code",
-          text: "Elegant summer attire. Ju rekomandojmë këpucë të rehatshme që të shijoni festën dhe vallëzimin deri në fund."
+          text: "Veshje elegante verore në stil ishulli. Ju rekomandojmë këpucë të rehatshme që të shijoni festën dhe vallëzimin gjatë gjithë mbrëmjes."
         },
         smoking: {
           title: "Një Shënim i Butë",
           text1: "Me qëllim që atmosfera e festës të mbetet sa më e këndshme dhe komode për të gjithë të ftuarit tanë, ju kërkojmë me mirësi që të mos pihet duhan gjatë aktivitetit.",
-          text2: "Për ata që dëshirojnë, do të ketë një zonë të përcaktuar pak më larg."
-        },
-        transport: {
-          title: "Transporti",
-          text: "Ju lutemi planifikoni të mbërrini pak më herët për ceremoninë. Më shumë detaje për hyrjen, parkimin dhe udhëzimet mund të shtohen këtu."
+          text2: "Për këdo që dëshiron, do të ketë një zonë të përcaktuar aty pranë."
         },
         contact: {
           title: "Kontakti",
           text: "Nëse keni nevojë për ndihmë me akomodimin, transportin apo çdo gjë tjetër, mund të na kontaktoni.",
           note: "Mund të shtoni këtu numër telefoni, WhatsApp link ose email."
-        }
-      },
-      weekend: {
-        title: "Fundjava e Dasmës",
-        intro: "Për ata që do të qëndrojnë me ne edhe pak më gjatë, kemi përgatitur disa momente të tjera të këndshme.",
-        tennis: {
-          title: "6:00 pasdite — Tennis with the Bride & Groom",
-          text: "Ejani të shihni nusen dhe dhëndrin duke luajtur tenis dhe të kalojmë një mbrëmje të qetë së bashku."
-        },
-        swim: {
-          title: "Not në Mëngjes",
-          text: "Bashkohuni me ne për një mëngjes të qetë pranë detit."
-        },
-        race: {
-          title: "7:00 pasdite — 5km Race for Andriana & Iasonas' Wedding",
-          text: "Një event argëtues për këdo që ka dëshirë për pak energji dhe shumë të qeshura."
         }
       },
       games: {
@@ -446,12 +387,13 @@ if (window.location.hash) {
         title: "RSVP",
         intro: "Do të ishim shumë të lumtur të festonim me ju. Ju lutemi na tregoni nëse do të mund të merrni pjesë.",
         name: "Emri juaj",
+        email: "Email-i juaj",
         attending: "Me kënaqësi do të jem i/e pranishëm",
         declining: "Me keqardhje nuk do të mundem",
         guests: "Numri i të ftuarve",
         message: "Lini një mesazh",
         button: "Dërgo RSVP",
-        success: "Faleminderit për RSVP!"
+        success: "Faleminderit shumë për përgjigjen tuaj!"
       },
       footer: {
         text: "Me dashuri, Andriana & Iasonas"
@@ -901,15 +843,49 @@ if (window.location.hash) {
     });
   }
 
-  const rsvpForm = document.getElementById("rsvp-form");
+const rsvpForm = document.getElementById("rsvp-form");
 
-  if (rsvpForm) {
-    rsvpForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert(translations[currentLang].rsvp.success);
-      rsvpForm.reset();
-    });
-  }
+if (rsvpForm) {
+  rsvpForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const submitBtn = rsvpForm.querySelector('button[type="submit"]');
+
+    const data = {
+      name: document.getElementById("name")?.value.trim(),
+      email: document.getElementById("email")?.value.trim(),
+      attendance: document.getElementById("attendance")?.value,
+      guests: document.getElementById("guests")?.value || "0",
+      message: document.getElementById("message")?.value.trim(),
+      language: currentLang
+    };
+
+    try {
+      if (submitBtn) submitBtn.disabled = true;
+
+      const response = await fetch("https://script.google.com/macros/s/AKfycbzG8fKdAnUwuwyVRaMWbhduBjEUE9z0R-WlajdxpF57_1T9BxK2yk_Lz_Ng44L6zvtsqA/exec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert(translations[currentLang].rsvp.success);
+        rsvpForm.reset();
+      } else {
+        alert("There was a problem sending your RSVP. Please try again.");
+      }
+    } catch (error) {
+      alert("There was a problem sending your RSVP. Please try again.");
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
+  });
+}
 
   applyTranslations("en");
 });
