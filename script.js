@@ -118,10 +118,10 @@ if (window.location.hash) {
           restart: "Play Again"
         },
         pingpong: {
-          title: "Ping Pong",
+          title: "Ball Game",
           button: "Start Game",
           score: (n) => `Score: ${n}`,
-          gameOver: "Game Over! 🎾"
+          gameOver: "Game Over!"
         }
       },
       rsvp: {
@@ -252,10 +252,10 @@ if (window.location.hash) {
           restart: "Παίξε Ξανά"
         },
         pingpong: {
-          title: "Ping Pong",
+          title: "Ball Game",
           button: "Έναρξη Παιχνιδιού",
           score: (n) => `Σκορ: ${n}`,
-          gameOver: "Τέλος Παιχνιδιού! 🎾"
+          gameOver: "Τέλος Παιχνιδιού!"
         }
       },
       rsvp: {
@@ -383,10 +383,10 @@ if (window.location.hash) {
           restart: "Luaj Përsëri"
         },
         pingpong: {
-          title: "Ping Pong",
+          title: "Ball Game",
           button: "Fillo Lojën",
           score: (n) => `Pikët: ${n}`,
-          gameOver: "Loja Mbaroi! 🎾"
+          gameOver: "Loja Mbaroi!"
         }
       },
       rsvp: {
@@ -451,14 +451,14 @@ if (window.location.hash) {
   });
 
   const icons = [
-    "images/photo1.JPEG",
-    "images/photo2.JPEG",
-    "images/photo3.JPEG",
-    "images/photo4.JPEG",
-    "images/photo5.JPEG",
-    "images/photo6.JPEG",
-    "images/photo7.JPEG",
-    "images/photo8.JPEG"
+    "images/photo1.jpeg",
+    "images/photo2.jpeg",
+    "images/photo3.jpeg",
+    "images/photo4.jpeg",
+    "images/photo5.jpeg",
+    "images/photo6.jpeg",
+    "images/photo7.jpeg",
+    "images/photo8.jpeg"
   ];
 
   let cardValues = [...icons, ...icons];
@@ -662,8 +662,8 @@ if (memoryRestartBtn) {
           updatePingPongTexts();
 
           if (score % 4 === 0) {
-            dx *= 1.05;
-            dy *= 1.05;
+            dx *= 1.2;
+            dy *= 1.2;
           }
         } else {
           isGameOver = true;
@@ -716,8 +716,8 @@ if (memoryRestartBtn) {
       music.play().catch(() => {});
 
       const fadeAudio = setInterval(() => {
-        if (music.volume < 0.2) {
-          music.volume = Math.min(music.volume + 0.02, 0.2);
+        if (music.volume < 0.1) {
+          music.volume = Math.min(music.volume + 0.02, 0.1);
         } else {
           clearInterval(fadeAudio);
         }
@@ -739,7 +739,7 @@ if (memoryRestartBtn) {
   function ensurePlaying() {
     if (!music) return;
     if (music.paused) {
-      music.volume = 0.2;
+      music.volume = 0.1;
       music.play().catch(() => {});
     }
   }
