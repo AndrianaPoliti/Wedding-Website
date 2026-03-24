@@ -762,6 +762,10 @@ button:hover {
   display: block;
 }
 
+#memoryRestartBtn {
+  margin-top: 14px;
+}
+
 /* ============================= */
 /* RSVP */
 /* ============================= */

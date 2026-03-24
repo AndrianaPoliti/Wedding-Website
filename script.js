@@ -84,7 +84,8 @@ if (window.location.hash) {
        title: "Your Presence Is the Greatest Gift",
        p1: "Having you with us on our wedding day is truly the most meaningful gift we could ask for.",
        p2: "Your presence is truly more than enough, but for anyone who would still like to honor us with a gift, a contribution to our honeymoon travel fund would be deeply appreciated.",
-       button: "Contribute to Our Honeymoon Fund"
+       p3: "We will shortly create a space for this purpose."
+       /* button: "Contribute to Our Honeymoon Fund" */
 },
       info: {
         title: "Useful Information",
@@ -113,7 +114,8 @@ if (window.location.hash) {
         title: "A Little Fun Before the Big Day",
         memory: {
           title: "Memory Game",
-          score: (n) => `You found ${n} out of 8 pairs.`
+          score: (n) => `You found ${n} out of 8 pairs.`,
+          restart: "Play Again"
         },
         pingpong: {
           title: "Ping Pong",
@@ -150,7 +152,7 @@ if (window.location.hash) {
         rsvp: "RSVP"
       },
       hero: {
-        invite: "Ζητούν την τιμή της παρουσίας σας<br>στον γάμο τους",
+        invite: "Ζητούν της παρουσίας σας<br>στον γάμο τους",
         date: "9 ΙΟΥΛΙΟΥ 2026",
         time: "7:00 ΤΟ ΑΠΟΓΕΥΜΑ",
         place: "ΑΓΙΟΣ ΚΥΠΡΙΑΝΟΣ, ΑΝΔΡΟΣ"
@@ -211,20 +213,21 @@ if (window.location.hash) {
       gift: {
          title: "Η Παρουσία σας Είναι το Ωραιότερο Δώρο",
          p1: "Το να σας έχουμε κοντά μας την ημέρα του γάμου μας είναι για εμάς το πιο πολύτιμο δώρο.",
-         p2: "Η παρουσία σας είναι πραγματικά υπεραρκετή, όμως για όποιον θα ήθελε παρ’ όλα αυτά να μας τιμήσει με ένα δώρο, μια συνεισφορά στο honeymoon travel fund μας θα εκτιμηθεί βαθιά.",
-         button: "Συνεισφορά στο Honeymoon Fund"
+         p2: "Η παρουσία σας είναι πραγματικά υπεραρκετή, για όποιον θα ήθελε παρ’ όλα αυτά να μας τιμήσει με ένα δώρο, μια συνεισφορά στο ταμείο για το ταξίδι του μέλιτός μας θα εκτιμηθεί βαθιά.",
+         p3: "Σύντομα θα αναρτηθούν οι σχετικές λεπτομέρειες."
+         /*   button: "Συνεισφορά στο Honeymoon Fund" */
 },
       info: {
         title: "Χρήσιμες Πληροφορίες",
         photos: {
           title: "Ανέβασμα Φωτογραφιών",
           text1: "Θα χαρούμε πολύ να μοιραστείτε μαζί μας τις φωτογραφίες και τα βίντεο από το γαμήλιο Σαββατοκύριακο, ώστε να ξαναζήσουμε κάθε όμορφη στιγμή μαζί.",
-          text2: "Σύντομα θα δημιουργήσουμε έναν ειδικό χώρο για αυτόν τον σκοπό."
+          text2: "Σύντομα θα αναρτηθούν οι σχετικές λεπτομέρειες."
        /*   button: "Ανεβάστε Φωτογραφίες Εδώ" */
         },
         dress: {
           title: "Dress Code",
-          text: "Καλοκαιρινή island chic ενδυμασία. Προτείνουμε άνετα παπούτσια ώστε να απολαύσετε τη γιορτή και τον χορό μέχρι αργά."
+          text: "Καλοκαιρινή κομψή ενδυμασία. Προτείνουμε άνετα παπούτσια ώστε να απολαύσετε τη γιορτή και τον χορό μέχρι αργά."
         },
         smoking: {
           title: "Μια Μικρή Σημείωση",
@@ -245,7 +248,8 @@ if (window.location.hash) {
         title: "Λίγη Διασκέδαση Πριν τη Μεγάλη Μέρα",
         memory: {
           title: "Παιχνίδι Μνήμης",
-          score: (n) => `Βρήκες ${n} από 8 ζευγάρια.`
+          score: (n) => `Βρήκες ${n} από 8 ζευγάρια.`,
+          restart: "Παίξε Ξανά"
         },
         pingpong: {
           title: "Ping Pong",
@@ -345,7 +349,8 @@ if (window.location.hash) {
         title: "Prania Juaj Është Dhurata Më e Bukur",
         p1: "Prania juaj në ditën e dasmës sonë është vërtet dhurata më e çmuar që mund të kërkonim.",
         p2: "Prania juaj është vërtet më se e mjaftueshme, por për këdo që do të dëshironte gjithsesi të na nderonte me një dhuratë, një kontribut për fondin tonë të muajit të mjaltit do të vlerësohej shumë.",
-        button: "Kontribuo për Honeymoon Fund"
+        p3: "Së shpejti do të krijojmë një hapësirë të posaçme për këtë qëllim."
+        /*  button: "Kontribuo për Honeymoon Fund" */
       },
       info: {
         title: "Informacione të Dobishme",
@@ -374,7 +379,8 @@ if (window.location.hash) {
         title: "Pak Argëtim Para Ditës së Madhe",
         memory: {
           title: "Lojë Kujtese",
-          score: (n) => `Gjete ${n} nga 8 palë.`
+          score: (n) => `Gjete ${n} nga 8 palë.`,
+          restart: "Luaj Përsëri"
         },
         pingpong: {
           title: "Ping Pong",
@@ -445,14 +451,14 @@ if (window.location.hash) {
   });
 
   const icons = [
-    "images/photo1.JPEG",
-    "images/photo2.JPEG",
-    "images/photo3.JPEG",
-    "images/photo4.JPEG",
-    "images/photo5.JPEG",
-    "images/photo6.JPEG",
-    "images/photo7.JPEG",
-    "images/photo8.JPEG"
+    "images/photo1.jpeg",
+    "images/photo2.jpeg",
+    "images/photo3.jpeg",
+    "images/photo4.jpeg",
+    "images/photo5.jpeg",
+    "images/photo6.jpeg",
+    "images/photo7.jpeg",
+    "images/photo8.jpeg"
   ];
 
   let cardValues = [...icons, ...icons];
@@ -462,72 +468,93 @@ if (window.location.hash) {
   let matchedPairs = 0;
 
   const grid = document.getElementById("grid");
-  const memoryScore = document.getElementById("memoryScore");
+const memoryScore = document.getElementById("memoryScore");
+const memoryRestartBtn = document.getElementById("memoryRestartBtn");
 
-  function updateMemoryScore() {
-    if (memoryScore) {
-      memoryScore.textContent = translations[currentLang].games.memory.score(matchedPairs);
-    }
+function updateMemoryScore() {
+  if (memoryScore) {
+    memoryScore.textContent = translations[currentLang].games.memory.score(matchedPairs);
   }
-
-  function resetMemoryBoard() {
-    firstCard = null;
-    secondCard = null;
-    lockBoard = false;
+  if (memoryRestartBtn) {
+    memoryRestartBtn.textContent = translations[currentLang].games.memory.restart;
   }
+}
 
-  if (grid && memoryScore) {
-    cardValues.sort(() => 0.5 - Math.random());
+function resetMemoryBoard() {
+  firstCard = null;
+  secondCard = null;
+  lockBoard = false;
+}
 
-    cardValues.forEach((icon) => {
-      const card = document.createElement("div");
-      card.classList.add("memory-card");
-      card.dataset.icon = icon;
+function createMemoryBoard() {
+  if (!grid) return;
 
-      card.innerHTML = `
-        <div class="card-inner">
-          <div class="card-front"><img src="${icon}" alt="memory photo"></div>
-          <div class="card-back"></div>
-        </div>
-      `;
+  grid.innerHTML = "";
+  matchedPairs = 0;
+  resetMemoryBoard();
+  updateMemoryScore();
 
-      grid.appendChild(card);
+  const shuffledCards = [...icons, ...icons].sort(() => 0.5 - Math.random());
 
-      card.addEventListener("click", () => {
-        if (
-          lockBoard ||
-          card.classList.contains("flip") ||
-          card.classList.contains("matched")
-        ) {
-          return;
-        }
+  shuffledCards.forEach((icon) => {
+    const card = document.createElement("div");
+    card.classList.add("memory-card");
+    card.dataset.icon = icon;
 
-        card.classList.add("flip");
+    card.innerHTML = `
+      <div class="card-inner">
+        <div class="card-front"><img src="${icon}" alt="memory photo"></div>
+        <div class="card-back"></div>
+      </div>
+    `;
 
-        if (!firstCard) {
-          firstCard = card;
-          return;
-        }
+    grid.appendChild(card);
 
-        secondCard = card;
-        lockBoard = true;
+    card.addEventListener("click", () => {
+      if (
+        lockBoard ||
+        card.classList.contains("flip") ||
+        card.classList.contains("matched")
+      ) {
+        return;
+      }
 
-        if (firstCard.dataset.icon === secondCard.dataset.icon) {
-          firstCard.classList.add("matched");
-          secondCard.classList.add("matched");
-          matchedPairs++;
-          updateMemoryScore();
+      card.classList.add("flip");
+
+      if (!firstCard) {
+        firstCard = card;
+        return;
+      }
+
+      secondCard = card;
+      lockBoard = true;
+
+      if (firstCard.dataset.icon === secondCard.dataset.icon) {
+        firstCard.classList.add("matched");
+        secondCard.classList.add("matched");
+        matchedPairs++;
+        updateMemoryScore();
+        resetMemoryBoard();
+      } else {
+        setTimeout(() => {
+          firstCard.classList.remove("flip");
+          secondCard.classList.remove("flip");
           resetMemoryBoard();
-        } else {
-          setTimeout(() => {
-            firstCard.classList.remove("flip");
-            secondCard.classList.remove("flip");
-            resetMemoryBoard();
-          }, 1000);
-        }
-      });
+        }, 1000);
+      }
     });
-  }
+  });
+}
+
+if (grid && memoryScore) {
+  createMemoryBoard();
+}
+
+if (memoryRestartBtn) {
+  memoryRestartBtn.addEventListener("click", () => {
+    createMemoryBoard();
+  });
+}
 
   const canvas = document.getElementById("tennisGame");
   const scoreEl = document.getElementById("tennisScore");
@@ -689,8 +716,8 @@ if (window.location.hash) {
       music.play().catch(() => {});
 
       const fadeAudio = setInterval(() => {
-        if (music.volume < 0.5) {
-          music.volume = Math.min(music.volume + 0.02, 0.5);
+        if (music.volume < 0.2) {
+          music.volume = Math.min(music.volume + 0.02, 0.2);
         } else {
           clearInterval(fadeAudio);
         }
@@ -712,7 +739,7 @@ if (window.location.hash) {
   function ensurePlaying() {
     if (!music) return;
     if (music.paused) {
-      music.volume = 0.5;
+      music.volume = 0.2;
       music.play().catch(() => {});
     }
   }
