@@ -451,14 +451,14 @@ if (window.location.hash) {
   });
 
   const icons = [
-    "images/photo1.jpeg",
-    "images/photo2.jpeg",
-    "images/photo3.jpeg",
-    "images/photo4.jpeg",
-    "images/photo5.jpeg",
-    "images/photo6.jpeg",
-    "images/photo7.jpeg",
-    "images/photo8.jpeg"
+    "images/photo1.JPEG",
+    "images/photo2.JPEG",
+    "images/photo3.JPEG",
+    "images/photo4.JPEG",
+    "images/photo5.JPEG",
+    "images/photo6.JPEG",
+    "images/photo7.JPEG",
+    "images/photo8.JPEG"
   ];
 
   let cardValues = [...icons, ...icons];
