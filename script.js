@@ -91,7 +91,7 @@ if (window.location.hash) {
         title: "Useful Information",
         photos: {
           title: "Guest Photo Upload",
-          text1: "We would love for you to share your photos and videos from the wedding weekend so we can relive every beautiful memory together.",
+          text1: "We would love for you to share your photos and videos from our wedding so we can relive every beautiful memory together.",
           text2: "We will shortly create a space for this purpose."
         /*  button: "Upload Photos Here" */
         },
@@ -221,12 +221,12 @@ if (window.location.hash) {
         title: "Χρήσιμες Πληροφορίες",
         photos: {
           title: "Ανέβασμα Φωτογραφιών",
-          text1: "Θα χαρούμε πολύ να μοιραστείτε μαζί μας τις φωτογραφίες και τα βίντεο από το γαμήλιο Σαββατοκύριακο, ώστε να ξαναζήσουμε κάθε όμορφη στιγμή μαζί.",
+          text1: "Θα χαρούμε πολύ να μοιραστείτε μαζί μας τις φωτογραφίες και τα βίντεο από τον γάμο μας, ώστε να ξαναζήσουμε μαζί κάθε όμορφη στιγμή.",
           text2: "Σύντομα θα αναρτηθούν οι σχετικές λεπτομέρειες."
        /*   button: "Ανεβάστε Φωτογραφίες Εδώ" */
         },
         dress: {
-          title: "Dress Code",
+          title: "Κώδικας Ενδυμασίας",
           text: "Καλοκαιρινή κομψή ενδυμασία. Προτείνουμε άνετα παπούτσια ώστε να απολαύσετε τη γιορτή και τον χορό μέχρι αργά."
         },
         smoking: {
@@ -356,7 +356,7 @@ if (window.location.hash) {
         title: "Informacione të Dobishme",
         photos: {
           title: "Ngarkimi i Fotove",
-          text1: "Do të na pëlqente shumë të ndani me ne fotot dhe videot nga fundjava e dasmës, që t’i rijetojmë së bashku të gjitha kujtimet e bukura.",
+          text1: "Do të na pëlqente shumë të ndani me ne fotot dhe videot nga dasma jonë, që të rijetojmë së bashku çdo kujtim të bukur.",
           text2: "Së shpejti do të krijojmë një hapësirë të posaçme për këtë qëllim."
       /*    button: "Ngarko Fotot Këtu" */
         },
@@ -451,14 +451,14 @@ if (window.location.hash) {
   });
 
   const icons = [
-    "images/photo1.JPEG",
-    "images/photo2.JPEG",
-    "images/photo3.JPEG",
-    "images/photo4.JPEG",
-    "images/photo5.JPEG",
-    "images/photo6.JPEG",
-    "images/photo7.JPEG",
-    "images/photo8.JPEG"
+    "images/photo1.jpeg",
+    "images/photo2.jpeg",
+    "images/photo3.jpeg",
+    "images/photo4.jpeg",
+    "images/photo5.jpeg",
+    "images/photo6.jpeg",
+    "images/photo7.jpeg",
+    "images/photo8.jpeg"
   ];
 
   let cardValues = [...icons, ...icons];
