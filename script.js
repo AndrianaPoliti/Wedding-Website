@@ -890,7 +890,7 @@ if (rsvpForm) {
     try {
       if (submitBtn) submitBtn.disabled = true;
 
-      const response = await fetch("https://script.google.com/macros/s/AKfycbzG8fKdAnUwuwyVRaMWbhduBjEUE9z0R-WlajdxpF57_1T9BxK2yk_Lz_Ng44L6zvtsqA/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbwiDJeP5JXKtxHIOkCcyi1ijhOlMYrozoNwKmVlx6DSRamnJq7QBw626zQDkPMM3TkQzQ/exec", {
         method: "POST",
         headers: {
           "Content-Type": "text/plain;charset=utf-8"
