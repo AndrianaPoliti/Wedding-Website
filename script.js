@@ -882,7 +882,7 @@ if (rsvpForm) {
       name: document.getElementById("name")?.value.trim(),
       email: document.getElementById("email")?.value.trim(),
       attendance: document.getElementById("attendance")?.value,
-      guests: document.getElementById("guests")?.value || "0",
+      guests: Number(document.getElementById("guests")?.value || 0),
       message: document.getElementById("message")?.value.trim(),
       language: currentLang
     };
