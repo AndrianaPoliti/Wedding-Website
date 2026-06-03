@@ -1103,3 +1103,36 @@ textarea {
     padding-top: 165px;
   }
 }
+
+
+/* ============================= */
+/* ACTIVE MENU ITEM */
+/* ============================= */
+
+.top-nav a.active {
+  background: #e6dcd0;
+  color: #7a756f;
+  border-radius: 999px;
+  padding: 7px 12px;
+}
+
+.top-nav a {
+  padding: 7px 12px;
+  border-radius: 999px;
+}
+
+/* Thinner top navigation bar */
+.top-nav {
+  padding: 6px 12px;
+  gap: 10px;
+}
+
+.top-nav a {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 999px;
+}
+
+.top-nav a.active {
+  padding: 5px 10px;
+}
