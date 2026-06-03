@@ -1124,7 +1124,7 @@ textarea {
 /* Thinner top navigation bar */
 .top-nav {
   padding: 6px 12px;
-  gap: 10px;
+  gap: 6px;
 }
 
 .top-nav a {
