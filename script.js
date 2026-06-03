@@ -915,4 +915,39 @@ if (rsvpForm) {
 }
 
   applyTranslations("en");
+
+   const navLinks = document.querySelectorAll(".top-nav a[href^='#']");
+
+const navSections = Array.from(navLinks)
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+
+function updateActiveNav() {
+  const offset = 180;
+  let currentSectionId = "";
+
+  navSections.forEach((section) => {
+    const sectionTop = section.offsetTop - offset;
+
+    if (window.scrollY >= sectionTop) {
+      currentSectionId = section.id;
+    }
+  });
+
+  navLinks.forEach((link) => {
+    const linkTarget = link.getAttribute("href").replace("#", "");
+    link.classList.toggle("active", linkTarget === currentSectionId);
+  });
+}
+
+window.addEventListener("scroll", updateActiveNav);
+window.addEventListener("resize", updateActiveNav);
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    setTimeout(updateActiveNav, 300);
+  });
+});
+
+updateActiveNav();
 });
