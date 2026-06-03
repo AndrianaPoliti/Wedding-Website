@@ -84,8 +84,8 @@ if (window.location.hash) {
        title: "Your Presence Is the Greatest Gift",
        p1: "Having you with us on our wedding day is truly the most meaningful gift we could ask for.",
        p2: "Your presence is truly more than enough, but for anyone who would still like to honor us with a gift, a contribution to our honeymoon travel fund would be deeply appreciated.",
-       p3: "We will shortly create a space for this purpose."
-       /* button: "Contribute to Our Honeymoon Fund" */
+       p3: "We will shortly create a space for this purpose.",
+       button: "Contribute to Our Honeymoon Fund" 
 },
       info: {
         title: "Useful Information",
@@ -214,8 +214,8 @@ if (window.location.hash) {
          title: "Η Παρουσία σας Είναι το Ωραιότερο Δώρο",
          p1: "Το να σας έχουμε κοντά μας την ημέρα του γάμου μας είναι για εμάς το πιο πολύτιμο δώρο.",
          p2: "Η παρουσία σας είναι πραγματικά υπεραρκετή, για όποιον θα ήθελε παρ’ όλα αυτά να μας τιμήσει με ένα δώρο, μια συνεισφορά στο ταμείο για το ταξίδι του μέλιτός μας θα εκτιμηθεί βαθιά.",
-         p3: "Σύντομα θα αναρτηθούν οι σχετικές λεπτομέρειες."
-         /*   button: "Συνεισφορά στο Honeymoon Fund" */
+         p3: "Σύντομα θα αναρτηθούν οι σχετικές λεπτομέρειες.",
+         button: "Συνεισφορά στο ταμείο για το ταξίδι του μέλιτός μας"
 },
       info: {
         title: "Χρήσιμες Πληροφορίες",
@@ -349,8 +349,8 @@ if (window.location.hash) {
         title: "Prania Juaj Është Dhurata Më e Bukur",
         p1: "Prania juaj në ditën e dasmës sonë është vërtet dhurata më e çmuar që mund të kërkonim.",
         p2: "Prania juaj është vërtet më se e mjaftueshme, por për këdo që do të dëshironte gjithsesi të na nderonte me një dhuratë, një kontribut për fondin tonë të muajit të mjaltit do të vlerësohej shumë.",
-        p3: "Së shpejti do të krijojmë një hapësirë të posaçme për këtë qëllim."
-        /*  button: "Kontribuo për Honeymoon Fund" */
+        p3: "Së shpejti do të krijojmë një hapësirë të posaçme për këtë qëllim.",
+        button: "Kontribuo për fondin tonë të muajit të mjaltit"
       },
       info: {
         title: "Informacione të Dobishme",
