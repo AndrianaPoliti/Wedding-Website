@@ -1021,3 +1021,85 @@ textarea {
     letter-spacing: 1.2px;
   }
 }
+
+/* ============================= */
+/* FIX LANGUAGE BUTTONS / TOP BAR */
+/* ============================= */
+
+.language-switcher {
+  top: 16px;
+  left: 16px;
+  z-index: 2000;
+  margin: 0;
+}
+
+.language-switcher .lang-btn {
+  margin-top: 0 !important;
+  min-height: auto !important;
+  padding: 7px 11px !important;
+  background: transparent;
+  color: #7a756f;
+  border: none;
+  box-shadow: none;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.language-switcher .lang-btn:hover,
+.language-switcher .lang-btn.active {
+  background: #e6dcd0;
+  color: #7a756f;
+  transform: none;
+}
+
+.top-nav {
+  top: 78px;
+  z-index: 1500;
+}
+
+/* Να μη μπαίνει το περιεχόμενο κάτω από τα fixed κουμπιά */
+.invitation {
+  padding-top: 130px;
+}
+
+@media (max-width: 768px) {
+  .language-switcher {
+    top: 12px;
+    left: 12px;
+  }
+
+  .language-switcher .lang-btn {
+    padding: 7px 10px !important;
+    font-size: 0.85rem;
+  }
+
+  #muteBtn {
+    top: 12px !important;
+    right: 12px !important;
+  }
+
+  .top-nav {
+    top: 70px;
+    width: calc(100% - 24px);
+  }
+
+  .invitation {
+    padding-top: 155px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-nav {
+    top: 66px;
+    gap: 8px 10px;
+    padding: 10px;
+  }
+
+  .top-nav a {
+    font-size: 0.86rem;
+  }
+
+  .invitation {
+    padding-top: 165px;
+  }
+}
