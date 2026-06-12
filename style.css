@@ -1277,3 +1277,74 @@ textarea {
   visibility: visible;
   opacity: 0.85;
 }
+/* IBAN one line, Copy underneath */
+.honeymoon-flip-card {
+  width: min(620px, 100%);
+  height: 112px;
+}
+
+.honeymoon-flip-back {
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 18px;
+}
+
+.honeymoon-bank-value {
+  width: 100%;
+  flex: none;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-align: center;
+}
+
+.iban-prefix,
+#honeymoonIban {
+  font-family: Arial, Helvetica, sans-serif !important;
+  white-space: nowrap;
+}
+
+.honeymoon-copy-btn {
+  margin: 0 !important;
+  min-height: 30px;
+  padding: 6px 18px;
+  flex-shrink: 0;
+}
+
+.honeymoon-copy-message {
+  display: block;
+  visibility: hidden;
+  min-height: 14px;
+  margin: 0;
+  font-size: 0.72rem;
+  opacity: 0;
+}
+
+.honeymoon-copy-message.show {
+  visibility: visible;
+  opacity: 0.85;
+}
+
+@media (max-width: 480px) {
+  .honeymoon-flip-card {
+    width: 100%;
+    max-width: 360px;
+    height: 122px;
+  }
+
+  .honeymoon-bank-value {
+    font-size: 0.72rem;
+    letter-spacing: 0.1px;
+  }
+
+  .honeymoon-flip-back {
+    gap: 7px;
+    padding: 12px 10px;
+  }
+}
