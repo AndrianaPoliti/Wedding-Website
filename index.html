@@ -180,15 +180,30 @@
           <p data-i18n="gift.p1">Having you with us on our wedding day is truly the most meaningful gift we could ask for.</p>
           <p data-i18n="gift.p2">Your presence is truly more than enough, but for anyone who would still like to honor us with a gift, a contribution to our honeymoon travel fund would be deeply appreciated.</p>
 
-          <a
-  class="primary-link"
-  href="https://revolut.me/iasonas_andriana"
-  target="_blank"
-  rel="noopener noreferrer"
-  data-i18n="gift.button"
->
-  Contribute to Our Honeymoon Fund
-</a>
+<div class="honeymoon-flip-card" id="honeymoonFlipCard" tabindex="0">
+  <div class="honeymoon-flip-inner">
+
+    <div class="honeymoon-flip-face honeymoon-flip-front">
+      <span data-i18n="gift.button">Contribute to Our Honeymoon Fund</span>
+    </div>
+
+    <div class="honeymoon-flip-face honeymoon-flip-back">
+
+      <p class="honeymoon-bank-value" id="honeymoonIban" data-copy-iban="LT89 3250 0190 8980 6629">
+        IBAN: LT89 3250 0190 8980 6629
+      </p>
+
+      <button type="button" class="honeymoon-copy-btn" id="copyHoneymoonIban">
+        Copy
+      </button>
+
+      <p class="honeymoon-copy-message" id="honeymoonCopyMessage">
+        Copied!
+      </p>
+    </div>
+
+  </div>
+</div>
         </div>
       </div>
     </section>
