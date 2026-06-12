@@ -152,7 +152,7 @@ if (window.location.hash) {
         rsvp: "RSVP"
       },
       hero: {
-        invite: "Ζητούν της παρουσίας σας<br>στον γάμο τους",
+        invite: "Ζητούν την παρουσία σας<br>στον γάμο τους",
         date: "9 ΙΟΥΛΙΟΥ 2026",
         time: "7:00 ΤΟ ΑΠΟΓΕΥΜΑ",
         place: "ΑΓΙΟΣ ΚΥΠΡΙΑΝΟΣ, ΑΝΔΡΟΣ"
@@ -950,4 +950,44 @@ navLinks.forEach((link) => {
 });
 
 updateActiveNav();
+
+const honeymoonFlipCard = document.getElementById("honeymoonFlipCard");
+const copyHoneymoonIban = document.getElementById("copyHoneymoonIban");
+const honeymoonIban = document.getElementById("honeymoonIban");
+const honeymoonCopyMessage = document.getElementById("honeymoonCopyMessage");
+
+if (honeymoonFlipCard) {
+  honeymoonFlipCard.addEventListener("click", () => {
+    honeymoonFlipCard.classList.toggle("flipped");
+  });
+
+  honeymoonFlipCard.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      honeymoonFlipCard.classList.toggle("flipped");
+    }
+  });
+}
+
+if (copyHoneymoonIban && honeymoonIban) {
+  copyHoneymoonIban.addEventListener("click", async (e) => {
+    e.stopPropagation();
+
+    const iban = honeymoonIban.dataset.copyIban || honeymoonIban.textContent.replace(/^IBAN:\s*/i, "").trim();
+
+    try {
+      await navigator.clipboard.writeText(iban);
+
+      if (honeymoonCopyMessage) {
+  honeymoonCopyMessage.classList.add("show");
+
+  setTimeout(() => {
+    honeymoonCopyMessage.classList.remove("show");
+  }, 1800);
+}
+    } catch (error) {
+      alert("Please copy the IBAN manually: " + iban);
+    }
+  });
+}  
 });
